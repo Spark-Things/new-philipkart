@@ -6,6 +6,7 @@ function Addproduct() {
    const [discription, setdiscription] = useState();
    const [price, setprice] = useState();
    const [category, setcategory] = useState();
+   const [Brand, setBrand] = useState();
 
   const addItems = () =>{
     fetch("http://localhost:5000/addproduct",{
@@ -19,6 +20,7 @@ function Addproduct() {
         discription,
         price,
         category,
+        Brand
       })
     })
     .then(res => res.json())
@@ -48,6 +50,10 @@ function Addproduct() {
                  <option>Shoes</option>
                  <option>TV</option>
              </select>
+      </div>
+      <div>
+        <label>Brand Name : </label>
+          <input type="text"  onChange={(e) => setBrand(e.target.value) }></input>
       </div>
       <button onClick={() => addItems()}>Add</button>
     </div>

@@ -12,9 +12,9 @@ router.get("/allproducts", (req, res) => {
 });
 
 router.post("/addproduct", requireLogin, (req, res) => {
-  const { title, discription, price,category } = req.body;
+  const { title, discription, price,category,Brand } = req.body;
 
-  if (!title || !discription || !price || !category) {
+  if (!title || !discription || !price || !category || !Brand) {
     res.json({ error: "please add all feild" });
   }
   req.user.password = undefined;
@@ -23,6 +23,7 @@ router.post("/addproduct", requireLogin, (req, res) => {
     discription,
     price,
     category,
+    Brand,
     author: req.user,
   });
 
