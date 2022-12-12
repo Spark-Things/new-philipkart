@@ -7,6 +7,7 @@ function Addproduct() {
    const [price, setprice] = useState();
    const [category, setcategory] = useState();
    const [Brand, setBrand] = useState();
+   const [image, setimage] = useState();
 
   const addItems = () =>{
     fetch("http://localhost:5000/addproduct",{
@@ -19,6 +20,7 @@ function Addproduct() {
         title,
         discription,
         price,
+        image,
         category,
         Brand
       })
@@ -54,6 +56,10 @@ function Addproduct() {
       <div>
         <label>Brand Name : </label>
           <input type="text"  onChange={(e) => setBrand(e.target.value) }></input>
+      </div>
+      <div>
+        <label>upload image : </label>
+          <input type="file"  onChange={(e) => setimage(e.target.files[0]) }></input>
       </div>
       <button onClick={() => addItems()}>Add</button>
     </div>

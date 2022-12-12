@@ -23,6 +23,11 @@ const Postschema = new mongoose.Schema({
       type: ObjectId,
       ref:"User"
     },
+    image:{
+      url : {
+      type:String,
+      },
+    },
     category:{
        type:String,
        required:true
