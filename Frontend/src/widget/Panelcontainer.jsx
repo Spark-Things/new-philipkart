@@ -19,15 +19,12 @@ function Panelcontainer({ category }) {
   return (
     <div className="container">
       <div className="panel1">
-        <span>BEST OF {category}</span>
-      </div>
-      {Data ? (
+        <span>Best Of {category}</span>
         <Link to={`/seeall/${category}`}>
-            <Productcard data={Data} />
+            <button>See All</button>
         </Link>
-      ) : (
-        <span>loading..</span>
-      )}
+      </div>
+            <Productcard data={Data} />
     </div>
   );
 }

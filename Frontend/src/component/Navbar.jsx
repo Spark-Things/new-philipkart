@@ -5,7 +5,10 @@ function Navbar() {
   return (
    <>
       <div className='navbar'>
-             <a>LOGO</a>
+         <Link to="/">
+            <a>LOGO</a>
+         </Link>
+             
              <div>
                    <a>ABOUT</a>
                    <a>Cart</a>

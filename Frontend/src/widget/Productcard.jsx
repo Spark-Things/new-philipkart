@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "./Productcard.css";
 import { Link } from "react-router-dom";
+import "./Productcard.css";
 
 function Productcard({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
     <>
         {data ? (
           data.map((item) => {
             return (
+            <Link to={`products/${item._id}`} >
               <div className="cardLayout">
                 <div className="imageconatiner"></div>
                 <div className="detailcontainer">
@@ -17,6 +18,7 @@ function Productcard({ data }) {
                   <span>{item.discription}</span>
                 </div>
               </div>
+              </Link>  
             );
           })
         ) : (

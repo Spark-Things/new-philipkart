@@ -7,12 +7,14 @@ import Listproduct from './component/Listproduct';
 import Productdetail from './component/Productdetail';
 import Profile from './component/Profile';
 import Addproduct from './component/Addproduct';
+import CategoryTab from './component/CategoryTab';
 
 function App() {
   return (
     <div className='App'>
            <Router>
            <Navbar />
+           <CategoryTab />
            {/* <Home/> */}
             <Routes>
               <Route path='/' exact  element={<Home/>}/>

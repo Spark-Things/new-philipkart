@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import {cloud_name,api_key,api_secret} from '../../../Backend/Keys'
 
 function Addproduct() {
    
@@ -10,6 +11,15 @@ function Addproduct() {
    const [image, setimage] = useState();
 
   const addItems = () =>{
+    const formData = new FormData();
+      formData.append("file", image);
+      formData.append(
+        "upload_preset",
+        process.env.NEXT_PUBLIC_CLOUDINARY_PRESET
+      );
+      formData.append("folder", process.env.NEXT_PUBLIC_CLOUDINARY_POST);
+      console.log(formData);
+
     fetch("http://localhost:5000/addproduct",{
       method:"POST",
       headers:{

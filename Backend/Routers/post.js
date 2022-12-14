@@ -15,24 +15,22 @@ router.get("/allproducts", (req, res) => {
 router.post("/addproduct", requireLogin, async (req, res) => {
   const { title, discription, price, category, Brand,image} = req.body;
 
-  const result = await cloudinary.uploader.upload(image, {
-    folder: "philipkart"
-  });
+  // const result = await cloudinary.uploader.upload(image, {
+  //   folder: "philipkart"
+  // });
 
   if (!title || !discription || !price || !category || !Brand) {
     res.json({ error: "please add all feild" });
   }
 
-  console.log(result.secure_url);
+  // console.log(result.secure_url);
 
   req.user.password = undefined;
   const post = new Post({
     title,
     discription,
     price,
-    image: {
-      url: result.secure_url
-    },
+    image,
     category,
     Brand,
     author: req.user,

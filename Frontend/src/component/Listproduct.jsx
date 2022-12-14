@@ -15,7 +15,7 @@ function Listproduct() {
       .then((res) => res.json())
       .then((result) => setList(result))
       .catch((err) => console.log(err));
-  }, []);
+  }, [category]);
 
   const [List, setList] = useState();
 

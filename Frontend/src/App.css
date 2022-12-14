@@ -19,6 +19,10 @@
   justify-content: space-between;
   padding: 20px;
 }
+.navbar > div{
+  display: flex;
+  flex-direction: row;
+}
 .navbar > div > a{
   color: white;
   padding: 10px;
@@ -37,9 +41,13 @@
   background-color: rgb(83, 60, 255);
 }
 .catagorycontainer{
-  height: 10vh;
+  height: max-content;
   width: 100%;
   background-color: blue;
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* ///////////////////////////////////////////////////// Panelconainer    ///////////////////////////////////////////////////  */
 .container{
@@ -58,10 +66,27 @@
   flex-direction: column;
   background-color: black;
   text-align: center;
+  padding: 10px;
   justify-content: center;
 }
 .panel1 > span {
+  text-transform: capitalize;
+  font-size: 20px;
   color: white;
+}
+.panel1 > a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.panel1 > a > button{
+  cursor: pointer;
+  padding: 10px 0px;
+  width: 40%;
+  background-color: white;
+  border-radius: 7px;
+  font-weight: 550;
 }
 
 .productdetailconatiner{
