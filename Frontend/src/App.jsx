@@ -10,6 +10,7 @@ import Addproduct from './component/Addproduct';
 import CategoryTab from './component/CategoryTab';
 import Cartpage from './component/Cartpage';
 import Signinpage from './component/Signinpage';
+import Signuppage from './component/Signuppage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path='/Addproduct' element={<Addproduct />} />
               <Route path='/cart' element={<Cartpage />} />
               <Route path='/Signin' element={<Signinpage />} />
+              <Route path='/Signup' element={<Signuppage />} />
               </Routes>
            </Router>
     </div>

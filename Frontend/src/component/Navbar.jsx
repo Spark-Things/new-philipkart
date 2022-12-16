@@ -21,8 +21,7 @@ function Navbar() {
                    </Link>
 
                    <Link to="/Signin"><a>SignIn</a></Link>
-   
-                   <a>SignUp</a>
+                   <Link to="/Signup"><a>SignUp</a></Link>
                    <Link to="/profile">
                        <span>Profile</span>
                    </Link>
