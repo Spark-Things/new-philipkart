@@ -8,6 +8,8 @@ import Productdetail from './component/Productdetail';
 import Profile from './component/Profile';
 import Addproduct from './component/Addproduct';
 import CategoryTab from './component/CategoryTab';
+import Cartpage from './component/Cartpage';
+import Signinpage from './component/Signinpage';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
               <Route path='/products/:id' element={<Productdetail/>} />
               <Route path='/profile' element={<Profile/>} />
               <Route path='/Addproduct' element={<Addproduct />} />
+              <Route path='/cart' element={<Cartpage />} />
+              <Route path='/Signin' element={<Signinpage />} />
               </Routes>
            </Router>
     </div>

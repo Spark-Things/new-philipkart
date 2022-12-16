@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const Post = mongoose.model("Post");
+const User = mongoose.model("User");
 const requireLogin = require("../middleware/RequireLogin");
 const cloudinary = require("../Cloudinary");
 
@@ -63,5 +64,34 @@ router.get("/products/:id", (req, res) => {
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
+
+
+router.post("/addtocart/:id",requireLogin,(req,res) => {
+  Post.find({_id: req.params.id})
+  .then(result => {
+      //  res.json(result);
+        User.findByIdAndUpdate({_id:req.user._id} , {
+          $push : { cart : result[0]}
+        }, {new : true}
+        )
+   
+       .exec((err,result) => {
+        if(err) return res.json(err);
+        else {
+          res.json(result);
+        }
+       })
+  })
+})
+
+
+router.get("/getcartItems",requireLogin,(req,res) => {
+  User.findById({_id : req.user._id})
+  .then(result => res.json(result.cart))
+  .catch(err => res.json(err))
+})
+
+
+
 
 module.exports = router;

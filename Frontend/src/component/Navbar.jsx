@@ -11,11 +11,18 @@ function Navbar() {
              
              <div>
                    <a>ABOUT</a>
-                   <a>Cart</a>
+                   <Link to="/cart">
+                      <a>Cart</a>
+                   </Link>
+                  
                    <a>wishlist</a>
                    <Link to="/Addproduct">
                    <a>Add product</a>
                    </Link>
+
+                   <Link to="/Signin"><a>SignIn</a></Link>
+   
+                   <a>SignUp</a>
                    <Link to="/profile">
                        <span>Profile</span>
                    </Link>

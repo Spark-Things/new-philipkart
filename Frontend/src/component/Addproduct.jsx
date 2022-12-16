@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {cloud_name,api_key,api_secret} from '../../../Backend/Keys'
+// import {cloud_name,api_key,api_secret} from '../../../Backend/Keys'
 
 function Addproduct() {
    

@@ -17,11 +17,27 @@ function Productdetail() {
       { setproduct(result) });
   }, []);
 
+
+  const addtoCart = () => {
+    fetch(`http://localhost:5000/addtocart/${id}`,{
+      method: "POST",
+      headers : {
+        "Content-type": "application/json",
+        "authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkzMDFhZThiODA5NDkwOGQ1NjQzNGUiLCJpYXQiOjE2NzA1ODE1NjB9.wyYZqVjMdsMI4b9IaZ6Ygs8Rj75yeUIfDLMdcvUvuxM"
+      }
+    })
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
+
+
+
   return (
     <div className="productdetailconatiner">
       <div className="productImageConatiner"></div>
       <div className="productdiscConatiner">
         {product ? <h4>{product.title}</h4> : <span>Loading...</span>}
+        <button onClick={() => addtoCart()}>Add to cart</button>
       </div>
     </div>
   );
