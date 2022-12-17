@@ -11,6 +11,7 @@ import CategoryTab from './component/CategoryTab';
 import Cartpage from './component/Cartpage';
 import Signinpage from './component/Signinpage';
 import Signuppage from './component/Signuppage';
+import Checkoutpage from './component/Checkoutpage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path='/cart' element={<Cartpage />} />
               <Route path='/Signin' element={<Signinpage />} />
               <Route path='/Signup' element={<Signuppage />} />
+              <Route path='/Checkout' element={<Checkoutpage />} />
               </Routes>
            </Router>
     </div>

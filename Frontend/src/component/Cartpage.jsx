@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function Cartpage() {
   const [items, setitems] = useState();
@@ -25,17 +25,21 @@ function Cartpage() {
       <div>
         {items ? (
           items.map((product) => {
-            return(
+            return (
               <Link to={`/products/${product._id}`}>
-              <div className="">
+                <div className="">
                   <a>{product.title}</a>
-              </div>
+                </div>
               </Link>
-          )})
+            );
+          })
         ) : (
           <a>Loding...</a>
         )}
       </div>
+      <Link to={"/checkout"}>
+        <button>CheckOut</button>
+      </Link>
     </div>
   );
 }
