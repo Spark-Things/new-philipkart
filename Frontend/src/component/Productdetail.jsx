@@ -26,7 +26,8 @@ function Productdetail() {
         "authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkzMDFhZThiODA5NDkwOGQ1NjQzNGUiLCJpYXQiOjE2NzA1ODE1NjB9.wyYZqVjMdsMI4b9IaZ6Ygs8Rj75yeUIfDLMdcvUvuxM"
       }
     })
-    .then(res => console.log(res))
+    .then(res => res.json())
+    .then(result => console.log(result))
     .catch(err => console.log(err))
   }
 
