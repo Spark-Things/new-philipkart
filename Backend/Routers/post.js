@@ -68,6 +68,7 @@ router.get("/products/:id", (req, res) => {
 
 router.post("/addtocart/:id",requireLogin,(req,res) => {
   Post.find({_id: req.params.id})
+  .select("email name _id")
   .then(result => {
       //  res.json(result);
         User.findByIdAndUpdate({_id:req.user._id} , {

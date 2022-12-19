@@ -12,6 +12,7 @@ import Cartpage from './component/Cartpage';
 import Signinpage from './component/Signinpage';
 import Signuppage from './component/Signuppage';
 import Checkoutpage from './component/Checkoutpage';
+import SearchBar from './widget/SearchBar';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path='/Signin' element={<Signinpage />} />
               <Route path='/Signup' element={<Signuppage />} />
               <Route path='/Checkout' element={<Checkoutpage />} />
+              <Route path='/search' element={<SearchBar />}/>
               </Routes>
            </Router>
     </div>

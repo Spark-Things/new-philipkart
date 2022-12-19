@@ -2,6 +2,14 @@ import React,{useState} from "react";
 import Panelcontainer from "../widget/panelcontainer";
 
 function Home() {
+  
+   const Adds =[
+    {link: ""},
+    {link: ""},
+    {link: ""},
+    {link: ""},
+   ] 
+
   return (
     <div className="maincontainer">
       <div className="Adcontainer">
