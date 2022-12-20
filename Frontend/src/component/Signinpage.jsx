@@ -16,7 +16,7 @@ function Signinpage() {
       },
     })
       .then((res) => res.json())
-      .then(result => console.log(result))
+      .then(result => console.log(result.msg))
       .catch((err) => console.log(err));
   };
   return (
