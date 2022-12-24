@@ -14,7 +14,11 @@ const userschema = new mongoose.Schema({
     required : true
   },
   cart:{
+    type:Object
     
+  },
+  wishlist:{
+    type:Object
   }
 })
 

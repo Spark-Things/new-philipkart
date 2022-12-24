@@ -9,8 +9,7 @@ function Cartpage() {
       method: "get",
       headers: {
         "Content-Type": "application/json",
-        authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzliMGM3MjRmY2YyNzE3NGJjMDFmZjIiLCJpYXQiOjE2NzExMDY4MjZ9.MHhQsF3cQ83jurDlziUSZLTNHGxuSnmNOtw93oIbgZI",
+        "authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E3MWI4MWU2M2M1OTkzZTAzMzg2MjMiLCJpYXQiOjE2NzE4OTU5NDN9.JAK0FHaYBUiDQxJDQJHarYQrjCiUewhDTTkiPDpOdVE",
       },
     })
       .then((res) => res.json())

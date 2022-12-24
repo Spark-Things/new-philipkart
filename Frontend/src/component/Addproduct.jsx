@@ -23,7 +23,7 @@ function Addproduct() {
     fetch("http://localhost:5000/addproduct",{
       method:"POST",
       headers:{
-        "authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkzMDFhZThiODA5NDkwOGQ1NjQzNGUiLCJpYXQiOjE2NzA2NzUxMjZ9.9DfDLL-DYL4FXOemogFCSAZs8rt72z2xcyefhSwQc8Q",
+        "authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E3MWI4MWU2M2M1OTkzZTAzMzg2MjMiLCJpYXQiOjE2NzE4OTU5NDN9.JAK0FHaYBUiDQxJDQJHarYQrjCiUewhDTTkiPDpOdVE",
         "Content-Type" : "application/json"
       }, 
       body : JSON.stringify({
