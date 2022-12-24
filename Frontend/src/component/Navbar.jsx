@@ -11,12 +11,13 @@ function Navbar() {
 
         <div>
           <Link to="/search">
-             <a>Search</a>
+            <a>Search</a>
           </Link>
           <Link to="/cart">
             <a>Cart</a>
           </Link>
-          <a>wishlist</a>
+          <Link to="/wishlist">   <a>wishlist</a></Link>
+       
           <Link to="/Addproduct">
             <a>Add product</a>
           </Link>

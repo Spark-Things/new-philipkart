@@ -14,7 +14,7 @@ router.get("/allproducts", (req, res) => {
 });
 
 router.post("/addproduct", requireLogin, async (req, res) => {
-  const { title, discription, price, category, Brand,image} = req.body;
+  const { title, discription, price, category, Brand, image } = req.body;
 
   // const result = await cloudinary.uploader.upload(image, {
   //   folder: "philipkart"
@@ -65,34 +65,55 @@ router.get("/products/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-
-router.post("/addtocart/:id",requireLogin,(req,res) => {
-  Post.find({_id: req.params.id})
-  .select("email name _id")
-  .then(result => {
-      //  res.json(result);
-        User.findByIdAndUpdate({_id:req.user._id} , {
-          $push : { cart : result[0]}
-        }, {new : true}
-        )
-   
-       .exec((err,result) => {
-        if(err) return res.json(err);
+router.post("/addtocart/:id", requireLogin, (req, res) => {
+  Post.find({ _id: req.params.id }).then((result) => {
+    //  res.json(result);
+    User.findByIdAndUpdate(
+      { _id: req.user._id },
+      {
+        $push: { cart: result[0] },
+      },
+      { new: true }
+    )
+      .select("email name _id cart wishlist")
+      .exec((err, result) => {
+        if (err) return res.json(err);
         else {
           res.json(result);
         }
-       })
-  })
-})
+      });
+  });
+});
 
+router.post("/addtowishlist/:id", requireLogin, (req, res) => {
+  Post.find({ _id: req.params.id }).then((result) => {
+    User.findByIdAndUpdate(
+      { _id: req.user._id },
+      {
+        $push: { wishlist: result[0] },
+      },
+      { new: true }
+    )
+      .select("email name _id cart wishlist")
+      .exec((err, result) => {
+        if (err) return res.json(err);
+        else {
+          res.json(result);
+        }
+      });
+  });
+});
 
-router.get("/getcartItems",requireLogin,(req,res) => {
-  User.findById({_id : req.user._id})
-  .then(result => res.json(result.cart))
-  .catch(err => res.json(err))
-})
+router.get("/getcartItems", requireLogin, (req, res) => {
+  User.findById({ _id: req.user._id })
+    .then((result) => res.json(result.cart))
+    .catch((err) => res.json(err));
+});
 
-
-
+router.get("/getWishlist", requireLogin, (req, res) => {
+  User.findById({_id: req.user._id })
+    .then((result) => res.json(result.wishlist))
+    .catch((err) => res.json(err));
+});
 
 module.exports = router;
