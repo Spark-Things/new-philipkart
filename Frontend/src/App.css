@@ -26,7 +26,7 @@
   padding: 10px;
 }
 .navbar > div> a:hover{
-  background-color: yellowgreen;
+  background-color: rgb(84, 115, 23);
 }
 .maincontainer{
   height: 100vh;
@@ -36,7 +36,7 @@
 .Adcontainer{
   height:max-content;
   width: 100%;
-  background-color: rgb(83, 60, 255);
+  background-color: rgb(30, 13, 158);
 }
 .ads{
   width: 100%;
@@ -45,7 +45,7 @@
 .catagorycontainer{
   height: max-content;
   width: 100%;
-  background-color: rgb(169, 169, 67);
+  background-color: rgb(101, 101, 0);
   display: flex;
   padding: 10px;
   flex-direction: row;
