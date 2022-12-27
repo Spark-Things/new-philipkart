@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <div className="navbar">
         <Link to="/">
-          <a>LOGO</a>
+          <a>garibkart</a>
         </Link>
 
         <div>

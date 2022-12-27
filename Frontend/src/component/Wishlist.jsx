@@ -8,8 +8,7 @@ function Wishlist() {
       method: "get",
       headers: {
         "Content-type": "application/json",
-        authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E3MWI4MWU2M2M1OTkzZTAzMzg2MjMiLCJpYXQiOjE2NzE4OTU5NDN9.JAK0FHaYBUiDQxJDQJHarYQrjCiUewhDTTkiPDpOdVE",
+        "authorization" : "Bearer " + localStorage.getItem("jwt")
       },
     })
       .then((res) => res.json())

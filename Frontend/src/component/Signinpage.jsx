@@ -16,7 +16,12 @@ function Signinpage() {
       },
     })
       .then((res) => res.json())
-      .then(result => console.log(result.msg))
+      .then(result =>{
+        localStorage.setItem("jwt",result.token);
+        localStorage.setItem("User",JSON.stringify(result.user));
+        console.log(result);
+        console.log(result.user);
+      })
       .catch((err) => console.log(err));
   };
   return (
