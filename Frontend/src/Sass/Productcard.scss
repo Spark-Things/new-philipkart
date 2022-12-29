@@ -1,0 +1,27 @@
+.cardLayout{
+  width: 20rem;
+  height: 100%;
+  padding: 1rem;
+  background-color: rgb(195, 29, 0);
+  margin: 0 .5rem;
+  font-size: 1.6rem;
+  border-radius: .5rem;
+   div{
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+    h5{
+      text-transform: capitalize;
+      font-size: 1.6rem;
+      letter-spacing: .7px;
+    }
+    span{
+      font-size: 1rem;
+      font-weight: 550;
+    }
+   }
+}
+.imageconatiner{
+  width: 100%;
+  height: 14rem;
+}
