@@ -11,14 +11,14 @@ function Addproduct() {
    const [image, setimage] = useState();
 
   const addItems = () =>{
-    const formData = new FormData();
-      formData.append("file", image);
-      formData.append(
-        "upload_preset",
-        process.env.NEXT_PUBLIC_CLOUDINARY_PRESET
-      );
-      formData.append("folder", process.env.NEXT_PUBLIC_CLOUDINARY_POST);
-      console.log(formData);
+    // const formData = new FormData();
+    //   formData.append("file", image);
+    //   formData.append(
+    //     "upload_preset",
+    //     process.env.NEXT_PUBLIC_CLOUDINARY_PRESET
+    //   );
+    //   formData.append("folder", process.env.NEXT_PUBLIC_CLOUDINARY_POST);
+    //   console.log(formData);
 
     fetch("http://localhost:5000/addproduct",{
       method:"POST",

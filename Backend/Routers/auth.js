@@ -86,4 +86,16 @@ router.post("/signin", (req, res) => {
     });
 });
 
+
+router.get("/myprofile",requireLogin,(req,res) => {
+  const {_id} = req.user;
+  User.findById({_id})
+  .select("email name _id")
+  .then(result => res.json(result))
+  .catch(err => res.json(err))
+
+})
+
+
+
 module.exports = router;

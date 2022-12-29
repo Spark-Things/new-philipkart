@@ -3,26 +3,15 @@ import { useEffect,useState } from "react";
 import { Link } from 'react-router-dom';
 
 function CategoryTab() {
-  const [cat, setcat] = useState()
-   useEffect(() => {
-    fetch("http://localhost:5000/allproducts",{
-      method: "get",
-      headers:{
-        "Content-Type" : "application/json"
-      }
-     })
-     .then(res => res.json())
-     .then(result => setcat(result))
-   }, [])
-
+  var cat = ["Shoes","Mobile","TV","Electronic","Other"];
   return (
     <div className="catagorycontainer">
     {
       cat ?
       cat.map((item) => {
         return(
-          <Link to={`/seeall/${item.category}`}>
-                       <a>{item.category}</a>
+          <Link to={`/seeall/${item}`}>
+                       <a>{item}</a>
           </Link>
         )
       }) : <span>loading....</span>

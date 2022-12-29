@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Productcard.css";
+import "../Sass/Productcard.css";
 
 function Productcard({ data }) {
   // console.log(data);
