@@ -48,7 +48,7 @@ a{
 .Adcontainer {
   @include row();
   height: max-content;
-  background-color: teal;
+  background-color: rgb(56, 255, 255);
   img {
     width: 100%;
     object-fit: cover;
