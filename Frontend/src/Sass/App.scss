@@ -48,7 +48,7 @@ a{
 .Adcontainer {
   @include row();
   height: max-content;
-  background-color: rgb(56, 255, 255);
+  background-color: rgb(207, 193, 0);
   img {
     width: 100%;
     object-fit: cover;
@@ -126,7 +126,7 @@ a{
   .productImageConatiner {
     height: 10rem;
     width: 85rem;
-    background-color: violet;
+    background-color: rgb(255, 95, 255);
   }
   .productdiscConatiner {
     width: 100%;
