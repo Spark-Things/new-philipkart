@@ -41,7 +41,7 @@ a {
   height: max-content;
   width: 100%;
   color: white;
-  background-color: brown;
+  background-color: rgb(255, 23, 247);
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -55,7 +55,7 @@ a {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  background-color: teal;
+  background-color: rgb(255, 249, 168);
 }
 .Adcontainer img {
   width: 100%;
@@ -79,7 +79,7 @@ a {
   height: -moz-max-content;
   height: max-content;
   width: 100%;
-  background-color: violet;
+  background-color: rgb(170, 255, 0);
 }
 
 .container {
@@ -97,7 +97,7 @@ a {
   width: 20rem;
   display: flex;
   flex-direction: column;
-  background-color: cadetblue;
+  background-color: rgb(0, 247, 255);
   text-align: center;
   padding: 1rem;
   justify-content: center;
@@ -137,7 +137,7 @@ a {
 .productdetailconatiner .productImageConatiner {
   height: 10rem;
   width: 85rem;
-  background-color: violet;
+  background-color: rgb(255, 95, 255);
 }
 .productdetailconatiner .productdiscConatiner {
   width: 100%;
@@ -158,3 +158,17 @@ a {
   display: flex;
   flex-direction: row;
 }/*# sourceMappingURL=App.css.map */
+::-webkit-scrollbar{
+  max-width: 1rem;
+  height: .6rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  backdrop-filter: blur(5px);
+  background: #86868661;
+  border-radius: 1rem;
+}
