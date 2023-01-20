@@ -13,45 +13,64 @@ function Productdetail() {
       },
     })
       .then((res) => res.json())
-      .then((result) => 
-      { setproduct(result) });
+      .then((result) => {
+        setproduct(result);
+      });
   }, []);
 
-
   const addtoCart = () => {
-    fetch(`http://localhost:5000/addtocart/${id}`,{
+    fetch(`http://localhost:5000/addtocart/${id}`, {
       method: "POST",
-      headers : {
+      headers: {
         "Content-type": "application/json",
-        "authorization" : "Bearer " + localStorage.getItem("jwt")
-      }
+        authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
     })
-    .then(res => res.json())
-    .then(result => console.log(result))
-    .catch(err => console.log(err))
-  }
+      .then((res) => res.json())
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+  };
 
   const addtoWishlist = () => {
-    fetch(`http://localhost:5000/addtowishlist/${id}`,{
+    fetch(`http://localhost:5000/addtowishlist/${id}`, {
       method: "POST",
-      headers : {
+      headers: {
         "Content-type": "application/json",
-        "authorization" : "Bearer " + localStorage.getItem("jwt")
-      }
+        authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
     })
-    .then(res => res.json())
-    .then(result => console.log(result))
-    .catch(err => console.log(err))
-  }
-
+      .then((res) => res.json())
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="productdetailconatiner">
       <div className="productImageConatiner"></div>
       <div className="productdiscConatiner">
-        {product ? <h4>{product.title}</h4> : <span>Loading...</span>}
-        <button onClick={() => addtoCart()}>Add to cart</button>
-        <button onClick={() => addtoWishlist()}>Add to wishlist</button>
+        {product ? (
+          <span className="title">{product.title}</span>
+        ) : (
+          <span>Loading...</span>
+        )}
+        <em>Special price</em>
+        {product ? <h1>₹{product.price}</h1> : <span>Loading...</span>}
+        {product ? <p>{product.discription}</p> : <span>Loading...</span>}
+
+        <div>
+          <button
+            onClick={() => addtoCart()}
+            style={{ backgroundColor: "rgb(30, 116, 255)" }}
+          >
+            Add to cart
+          </button>
+          <button
+            onClick={() => addtoWishlist()}
+            style={{ backgroundColor: " rgb(22, 232, 255)" }}
+          >
+            Add to wishlist
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -15,10 +15,14 @@ function Listpanel({data}) {
                
              </div>
              <div className='ppdetailcontainer'>
-              <h5>{item.title}</h5>
+               <h2>{item.title}</h2>
+               <p>{item.discription}</p>
              </div>
              <div className='detailcontainer'>
-                 <h3>{item.price}</h3>
+                 <h2>₹{item.price}</h2>
+                 <span>free delivery</span>
+                 <h4>Top Discount On Sale</h4>
+                 <h5>upto ₹5200 off on Exchange</h5>
              </div>
           </div>
           </Link>

@@ -21,8 +21,13 @@ function Listproduct() {
 
   return (
     <div className="maincontainer">
-      list
-      <Listpanel data={List} />
+      <div style={{display:"flex",width:"100%"}}>
+       <div className="FilterList">
+            <span>Sort</span>
+       </div>
+       <div>   <Listpanel data={List} /></div>
+      
+      </div>
     </div>
   );
 }

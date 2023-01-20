@@ -1,19 +1,58 @@
 @import "./common";
 
-.Lcontainer{
+.Lcontainer {
   @include row();
   height: 35vh;
   justify-content: space-between;
-  padding: 2rem;
-  background-color: rgb(100, 255, 53);
-}
-.imgConatiner{
-  width: 40rem;
-  height: 100%;
-  background-color: rgb(130, 234, 238);
-}
-.ppdetailcontainer{
-  width: 40rem;
-  height: 100%;
-  background-color: teal;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px #cacaca solid;
+  .imgConatiner {
+    width: 25rem;
+    height: 100%;
+    background-color: rgb(130, 234, 238);
+  }
+  .ppdetailcontainer {
+    padding: 2rem 0.5rem;
+    width: 50rem;
+    height: 100%;
+    // background-color: teal;
+
+    h2 {
+      font-size: 1.8rem;
+      letter-spacing: 0.1rem;
+      text-transform: capitalize;
+    }
+    p {
+      line-height: 3rem;
+      font-size: 1.4rem;
+    }
+  }
+  .detailcontainer {
+    width: 36rem;
+    padding: 2rem;
+    line-height: 2.5rem;
+  }
+  h2{
+    font-size: 2.4rem;
+
+    &:hover{
+      color: rgb(30, 116, 255);
+    }
+  }
+  span{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #525252;
+  }
+  h4{
+    color: rgb(30, 116, 255);
+    font-size: 1.2rem;
+  }
+  h5{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 450;
+  }
 }
