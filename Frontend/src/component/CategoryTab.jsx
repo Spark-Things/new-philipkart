@@ -11,7 +11,7 @@ function CategoryTab() {
       cat.map((item) => {
         return(
           <Link to={`/seeall/${item}`}>
-                       <a>{item}</a>
+                       <span>{item}</span>
           </Link>
         )
       }) : <span>loading....</span>

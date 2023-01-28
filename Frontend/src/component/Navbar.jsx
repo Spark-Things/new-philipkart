@@ -6,26 +6,27 @@ function Navbar() {
     <>
       <div className="navbar">
         <Link to="/">
-          <a>garibkart</a>
+          <span className="logo">Garibkart</span>
         </Link>
 
         <div>
-          <Link to="/search">
-            <a>Search</a>
-          </Link>
+          <input type="search" name="" id="" placeholder="Search"/>
           <Link to="/cart">
-            <a>Cart</a>
+            <span>Cart</span>
           </Link>
-          <Link to="/wishlist">   <a>wishlist</a></Link>
-       
+          <Link to="/wishlist">
+            {" "}
+            <span>wishlist</span>
+          </Link>
+
           <Link to="/Addproduct">
-            <a>Add product</a>
+            <span>Add product</span>
           </Link>
           <Link to="/Signin">
-            <a>SignIn</a>
+            <span>SignIn</span>
           </Link>
           <Link to="/Signup">
-            <a>SignUp</a>
+            <span>SignUp</span>
           </Link>
           <Link to="/profile">
             <span>Profile</span>

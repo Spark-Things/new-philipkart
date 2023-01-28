@@ -9,7 +9,7 @@ function Cartpage() {
       method: "get",
       headers: {
         "Content-Type": "application/json",
-        "authorization" : "Bearer " +localStorage.getItem("jwt"),
+        authorization: "Bearer " + localStorage.getItem("jwt"),
       },
     })
       .then((res) => res.json())
@@ -19,15 +19,32 @@ function Cartpage() {
       });
   }, []);
 
+  const removeFromcart = () => {
+    fetch("http://localhost:5000/removeitem/:id",{
+      method:"put",
+      headers: {
+        "Content-Type": "application/json ",
+        authorization : "Bearer " + localStorage.getItem("jwt")
+      },
+    })
+    .then((res) => res.json())
+    .then((result) => {
+      console.log(result);
+    })
+  }
+
+
+
   return (
-    <div>
+    <div  className="Cartscreen">
       <div>
         {items ? (
           items.map((product) => {
             return (
               <Link to={`/products/${product._id}`}>
-                <div className="">
-                  <a>{product.title}</a>
+                <div className="pList">
+                  <span>{product.title}</span>
+                  <button>Remove</button>
                 </div>
               </Link>
             );

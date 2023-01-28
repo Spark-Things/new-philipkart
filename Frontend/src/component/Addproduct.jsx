@@ -41,17 +41,17 @@ function Addproduct() {
   
 
   return (
-    <div>
+    <div className='addProductScreen'>
       <div>
         <label>title : </label>
-          <input type="text" onChange={(e) => settitle(e.target.value) }></input>
+          <input type="text" onChange={(e) => settitle(e.target.value)} placeholder="Product name"></input>
       </div>
       <div>
         <label>discription : </label>
           <input type="text"  onChange={(e) => setdiscription(e.target.value) }></input>
       </div>
       <div>
-        <label>price :</label>
+         <label>price :</label>
           <input type="number"  onChange={(e) => setprice(e.target.value) }></input>
       </div>
       <div>

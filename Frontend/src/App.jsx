@@ -12,7 +12,6 @@ import Cartpage from './component/Cartpage';
 import Signinpage from './component/Signinpage';
 import Signuppage from './component/Signuppage';
 import Checkoutpage from './component/Checkoutpage';
-import SearchBar from './widget/SearchBar';
 import Wishlist from './component/Wishlist';
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
               <Route path='/Signin' element={<Signinpage />} />
               <Route path='/Signup' element={<Signuppage />} />
               <Route path='/Checkout' element={<Checkoutpage />} />
-              <Route path='/search' element={<SearchBar />}/>
               <Route path='/wishlist' element={<Wishlist />}/>
               </Routes>
            </Router>

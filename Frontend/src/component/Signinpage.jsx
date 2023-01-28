@@ -25,7 +25,7 @@ function Signinpage() {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="">
+    <div className="LoginpageScreen">
       <div className="">
         <label htmlFor="email">Email : </label>
         <input

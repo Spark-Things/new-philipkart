@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Wishlist() {
   const [list, setlist] = useState();
@@ -18,14 +19,26 @@ function Wishlist() {
       })
       .catch((err) => console.log(err));
   }, []);
-
-  return(
-    <div>
-       {list ? list.map((item) => {
+  return (
+    <div  className="Cartscreen">
+      <div>
+      {list ? (list.map((item) => {
          return(
-           <span>{item.title}</span>
-         )
-       }) : <span>Losding.....</span>}
+              <Link to={`/products/${item._id}`}>
+                <div className="pList">
+                  <span>{item.title}</span>
+                  <button>Remove</button>
+                </div>
+              </Link>
+            );
+          })
+        ) : (
+          <a>Loding...</a>
+        )}
+      </div>
+      <Link to={"/checkout"}>
+        <button>CheckOut</button>
+      </Link>
     </div>
   );
 }

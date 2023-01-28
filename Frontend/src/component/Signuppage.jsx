@@ -22,7 +22,7 @@ function Signuppage() {
     .catch(err => console.log(err))
   }
   return (
-    <div className="">
+    <div className="LoginpageScreen">
       <div className="">
         <label htmlFor="name">Name : </label>
         <input
@@ -41,6 +41,14 @@ function Signuppage() {
       </div>
       <div className="">
         <label htmlFor="password">password : </label>
+        <input
+          type="password"
+          name="password"
+          onChange={(e) => setpassword(e.target.value)}
+        />
+      </div>
+      <div className="">
+        <label htmlFor="password">Confirm password : </label>
         <input
           type="password"
           name="password"

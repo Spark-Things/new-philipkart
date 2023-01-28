@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
+  color: white;
   height: 35vh;
   justify-content: space-between;
   padding: 1rem;

@@ -4,3 +4,49 @@
   display: flex;
   flex-direction: row;
 }
+
+@mixin inputConainer{
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin labels{
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+  min-width: 15rem;
+  align-items: center;
+  margin: auto;
+  color: white;
+}
+@mixin inputs{
+  padding: 16px;
+  min-width: 35rem;
+  height: max-content;
+  border-radius: 5px;
+  border: 1px #cacaca solid;
+}
+
+@mixin cmnBTN{
+  cursor: pointer;
+  color: white;
+  padding: 2% 10%;
+  background-color: rgb(46, 43, 226);
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 550;
+  margin-top: 20px;
+}
+@mixin commonScreen{
+  width: 100%;
+  background-color: #202020;
+  height: max-content;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 10%;
+}

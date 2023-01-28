@@ -1,4 +1,9 @@
 @import "./common";
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,6 +11,8 @@
   margin: 0px;
   font-family: sans-serif;
   color: black;
+  font-family: 'Saira', sans-serif;
+  text-transform: capitalize;
 }
 html {
   font-size: 62.5%;
@@ -17,33 +24,56 @@ a{
 .navbar {
   width: 100%;
   display: flex;
-  background-color: lightgrey;
+  background-color: #202020;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 2rem;
 
-  div {
+  .logo{
+    font-family: 'Rancho', cursive;
+     color: white;
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  div{
     display: flex;
     flex-direction: row;
-
-    a {
-      font-size: 2rem;
-      color: rgb(91, 64, 228);
-      padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    span{
+      font-size: 18px;
+      color: rgb(255, 255, 255);
+      padding: 1rem 2rem;
       &:hover {
-        background-color: beige;
+        background-color:  #55555578;
+        border-radius: 5px;
+      }
+    }
+    input{
+      color: white;
+      background-color: #525252;
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 0;
+      margin-right: 2rem;
+      &:focus{
+        border: 1px #363636 solid;
       }
     }
   }
 }
 .catagorycontainer {
-  font-size: 1rem + 0.1rem * 6;
-  height: max-content;
-  width: 100%;
-  color: white;
-  background-color: rgb(255, 23, 247);
+  font-size: 1.6rem;
+  background-color: rgb(98, 98, 98);
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 1rem;
+
+   span{
+    color: white;
+   }
 }
 .Adcontainer {
   @include row();
@@ -70,24 +100,24 @@ a{
 .maincontainer {
   height: max-content;
   width: 100%;
+  background-color: #202020;
 }
 
 .container {
   height: 35vh;
   width: 100%;
   // background-color: yellow;
-  padding: .5rem 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
+  border-bottom: 1px #3b3b3b solid;
   scroll-behavior: smooth;
   .panel1 {
-    height: 100%;
-    min-width: 20rem;
-    width: 20rem;
+    min-width: 23rem;
     display: flex;
     flex-direction: column;
-    background-color: rgb(0, 247, 255);
+    // background-color: rgb(37, 39, 39);
     text-align: center;
     padding: 1rem;
     justify-content: center;
@@ -104,15 +134,8 @@ a{
       justify-content: center;
       align-items: center;
       button {
-        cursor: pointer;
-        color: black;
-        padding: 1rem 0;
-        width: 40%;
-        background-color: white;
-        border: 0;
-        border-radius: .5rem;
-        font-weight: 550;
-        margin-top: 1rem;
+        @include cmnBTN();
+
       }
     }
   }
@@ -179,4 +202,67 @@ a{
    min-width: 20%;
    height: 100vh;
    background-color: aqua;
+}
+.Cartscreen{
+  width: 100%;
+  height: 100%;
+  padding: 10px 25%;
+  .pList{
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    // background-color: rgb(199, 67, 67);
+    border-bottom: 1px #cacaca solid;
+    padding: 10px;
+    span{
+      font-size: 18px;
+    }
+    button{
+      padding: 2% 3%;
+      background-color: rgb(205, 41, 41);
+      margin-top: 0px;
+    }
+  }
+
+  button{
+      @include cmnBTN();
+  }
+}
+
+.addProductScreen{
+   @include commonScreen();
+  div{
+    @include inputConainer();
+
+    label{
+       @include labels();
+    }
+    input,select{
+      @include inputs();
+    }
+
+  }
+  button{
+    @include cmnBTN();
+    padding: 1% 5%;
+  }
+}
+
+.LoginpageScreen{
+  @include commonScreen();
+
+  div{
+    @include inputConainer();
+
+    label{
+      @include labels();
+    }
+    input{
+      @include inputs();
+    }
+  }
+  button{
+    @include cmnBTN();
+    padding: 1% 5%;
+  }
 }

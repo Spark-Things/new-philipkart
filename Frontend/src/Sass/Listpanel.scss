@@ -2,6 +2,7 @@
 
 .Lcontainer {
   @include row();
+  color: white;
   height: 35vh;
   justify-content: space-between;
   padding: 1rem;
