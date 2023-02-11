@@ -24,7 +24,9 @@ function Panelcontainer({ category }) {
             <button>See All</button>
         </Link>
       </div>
-            <Productcard data={Data} />
+      <div className="productCardConatiner">  
+          <Productcard data={Data} />
+      </div>         
     </div>
   );
 }

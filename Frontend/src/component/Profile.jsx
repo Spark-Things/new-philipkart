@@ -17,6 +17,14 @@ function Profile() {
       });
   }, []);
 
+
+  const onLogout = () => {
+    localStorage.removeItem('User');
+    localStorage.removeItem('jwt');
+  }
+
+
+
   const [User, setUser] = useState([]);
 
   console.log(User);
@@ -30,7 +38,10 @@ function Profile() {
       ) : (
         <span>Loading .. .. .. .. .. .. </span>
       )}
-      <span>hello spark</span>
+      <span>hello spark</span><br/>
+
+
+      <button onClick={onLogout}>Logout</button>
     </div>
   );
 }

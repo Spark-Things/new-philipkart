@@ -10,6 +10,7 @@
   margin-top: 15px;
   display: flex;
   justify-content: center;
+  flex-direction: row;
 }
 
 @mixin labels{
@@ -22,11 +23,14 @@
   color: white;
 }
 @mixin inputs{
-  padding: 16px;
+  padding: 12px;
   min-width: 35rem;
   height: max-content;
   border-radius: 5px;
+  background-color: #cacaca;
+  color: #202020;
   border: 1px #cacaca solid;
+  outline: 0;
 }
 
 @mixin cmnBTN{
@@ -38,7 +42,8 @@
   border: 0;
   border-radius: 5px;
   font-weight: 550;
-  margin-top: 20px;
+  width: max-content;
+  margin-top: 5rem;
 }
 @mixin commonScreen{
   width: 100%;

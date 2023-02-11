@@ -22,14 +22,14 @@ function Navbar() {
           <Link to="/Addproduct">
             <span>Add product</span>
           </Link>
-          <Link to="/Signin">
-            <span>SignIn</span>
-          </Link>
           <Link to="/Signup">
             <span>SignUp</span>
           </Link>
           <Link to="/profile">
             <span>Profile</span>
+          </Link>
+          <Link to="/Signin">
+            <span>SignIn</span>
           </Link>
         </div>
       </div>

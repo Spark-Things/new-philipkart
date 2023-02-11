@@ -12,24 +12,28 @@ router.get("/checkout", requireLogin, (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password,cnfpassword } = req.body;
 
   if (
     !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       email
     )
   ) {
-    return console.log("Invalid Email");
+    return res.json({ error:"Invalid Email"});
   }
-  if (!name || !email || !password) {
+  if (!name || !email || !password || !cnfpassword) {
     return res.json({ error: "pehle dang se form bhar le jyada hero mat ban" });
+  }
+
+  if(password !== cnfpassword){
+     return res.json({error : "Dono Password same daal , tuje kya laga validation nahi rakha hoga !!"})
   }
   bcrypt
     .hash(password, 12)
     .then((hashedpassword) => {
       User.findOne({ email: email }).then((savedUser) => {
         if (savedUser) {
-          return res.json({ Error: "Tu fir aa gaya tu jaa ree signin kar" });
+          return res.json({ error: "Tu fir aa gaya tu jaa ree signin kar" });
         }
 
         const user = new User({

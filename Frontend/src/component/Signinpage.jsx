@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signinpage() {
   const [email, setemail] = useState();
   const [password, setpassword] = useState();
+
+  const navigate = useNavigate();
 
   const login = () => {
     fetch("http://localhost:5000/signin", {
@@ -16,9 +19,14 @@ function Signinpage() {
       },
     })
       .then((res) => res.json())
-      .then(result =>{
-        localStorage.setItem("jwt",result.token);
-        localStorage.setItem("User",JSON.stringify(result.user));
+      .then((result) => {
+        localStorage.setItem("jwt", result.token);
+        localStorage.setItem("User", JSON.stringify(result.user));
+
+        if (localStorage.getItem("User") || localStorage.getItem("jwt")) {
+          navigate("/");
+        }
+
         console.log(result);
         console.log(result.user);
       })
@@ -26,6 +34,7 @@ function Signinpage() {
   };
   return (
     <div className="LoginpageScreen">
+      <div>
       <div className="">
         <label htmlFor="email">Email : </label>
         <input
@@ -45,6 +54,10 @@ function Signinpage() {
       <button className="loginbtn" onClick={() => login()}>
         Login
       </button>
+
+
+      <span>New User ? <Link to="/Signup">Sign Up here</Link></span>
+      </div>
     </div>
   );
 }
