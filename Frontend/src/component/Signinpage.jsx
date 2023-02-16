@@ -22,7 +22,6 @@ function Signinpage() {
       .then((result) => {
         localStorage.setItem("jwt", result.token);
         localStorage.setItem("User", JSON.stringify(result.user));
-
         if (localStorage.getItem("User") || localStorage.getItem("jwt")) {
           navigate("/");
         }

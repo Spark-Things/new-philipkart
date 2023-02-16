@@ -104,21 +104,23 @@ router.post("/addtowishlist/:id", requireLogin, (req, res) => {
   });
 });
 
-router.put("/removeitem/:id", requireLogin, (req, res) => {
-  Post.find({ _id: req.params.id }).then((result) => {
-    User.findByIdAndDelete(
-      { _id: req.user._id },
-      {
-        $pull: { wishlist: result[0] },
+router.delete("/deleteItem/:id", requireLogin, (req, res) => {
+  Post.findOne({ _id: req.params.id }).then((result) => {
+    console.log(result.id);
+    User.findById({ _id: req.user._id }).exec((err, user) => {
+      if (err || !user) {
+        return res.json({ error: err });
       }
-    )
-      .select("email name _id cart wishlist")
-      .exec((err, result) => {
-        if (err) console.log(err);
-        else {
-          res.json(result);
+      user.cart.filter((item) => {
+        if (item.id == result.id) {
+          console.log("cumming");
+          item
+            .pop()
+            .then((result) => res.json(result))
+            .catch((err) => res.json(err));
         }
       });
+    });
   });
 });
 

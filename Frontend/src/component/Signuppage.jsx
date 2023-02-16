@@ -51,7 +51,7 @@ function Signuppage() {
       <div className="">
         <label htmlFor="name">Name : </label>
         <input
-          type="password"
+          type="text"
           name="name"
           id='name'
           placeholder='Eg. Tony Stark'
@@ -61,7 +61,7 @@ function Signuppage() {
       <div className="">
         <label htmlFor="email">Email : </label>
         <input
-          type="password"
+          type="text"
           id='email'
           name="email"
           placeholder='Eg. tonystark3000@gmail.com'
@@ -80,7 +80,7 @@ function Signuppage() {
       <div className="">
         <label htmlFor="cnfpassword">Confirm password : </label>
         <input
-          type="text"
+          type="password"
           id='cnfpassword'
           name='cnfpassword'
           // onChange={(e) => setCnfpassword(e.target.value)}
