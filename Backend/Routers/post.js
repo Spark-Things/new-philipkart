@@ -105,24 +105,68 @@ router.post("/addtowishlist/:id", requireLogin, (req, res) => {
 });
 
 router.delete("/deleteItem/:id", requireLogin, (req, res) => {
-  Post.findOne({ _id: req.params.id }).then((result) => {
-    console.log(result.id);
-    User.findById({ _id: req.user._id }).exec((err, user) => {
-      if (err || !user) {
-        return res.json({ error: err });
-      }
-      user.cart.filter((item) => {
-        if (item.id == result.id) {
-          console.log("cumming");
-          item
-            .pop()
-            .then((result) => res.json(result))
-            .catch((err) => res.json(err));
-        }
-      });
-    });
+  User.findById({ _id: req.user._id })
+  .populate("cart","_id")
+  .exec((err,item) => {
+    if(err || !item){
+       return res.status(422).json({error : err})
+    }
+
+     if(item.cart._id.toString() == req.params.id.toString()){
+      console.log("hii");
+     }
+
+  })
+  // .then((result) => {
+  //   result.cart.filter((item) => {
+  //     // console.log(item.id);
+  //     console.log(item);
+  //     console.log(req.params.id);
+
+  //     if (item._id == req.params.id) {
+  //       item
+  //         .remove()
+  //         .then((result) => res.json(result))
+  //         .catch((err) => res.json(err));
+  //     }else{
+  //       console.log("LLG");
+  //     }
+  //   });
   });
-});
+
+  // Post.findByIdAndRemove({ _id: req.params.id }).then((result) => {
+  //   User.findById({ _id: req.user._id },{
+  //     $pull: {cart: result._id}
+  //   })
+  //   .populate("cart")
+  //   .exec((err, user) => {
+  //     if (err || !user) {
+  //       return res.json({ error: err });
+  //     }else{
+  //       res.json(user)
+  //     }
+  // res.json(user.cart);
+  // console.log(result.id);
+
+  // user.cart.map((item) => {
+  //   console.log(item._id.slice(""));
+  // })
+  // user.cart.map((item) => {
+  //   if (item.id == result.id) {
+  //     console.log("cumming");
+  //     item
+  //       .delete()
+  //       .then((result) => res.json(result))
+  //       .catch((err) => res.json(err));
+  //   } else {
+  //     console.log(user.cart);
+  //     console.log("itemid", item.id);
+  //     console.log(result.id);
+  //   }
+  // });
+  // });
+  // });
+// });
 
 router.get("/getcartItems", requireLogin, (req, res) => {
   User.findById({ _id: req.user._id })
