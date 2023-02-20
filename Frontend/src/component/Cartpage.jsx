@@ -19,9 +19,9 @@ function Cartpage() {
       });
   }, []);
 
-  const removeFromcart = () => {
-    fetch("http://localhost:5000/removeitem/:id",{
-      method:"put",
+  const removeFromcart = (id) => {
+    fetch(`http://localhost:5000/deleteItem/${id}`,{
+      method:"delete",
       headers: {
         "Content-Type": "application/json ",
         authorization : "Bearer " + localStorage.getItem("jwt")
@@ -30,6 +30,7 @@ function Cartpage() {
     .then((res) => res.json())
     .then((result) => {
       console.log(result);
+      setitems(result.cart)
     })
   }
 
@@ -41,12 +42,12 @@ function Cartpage() {
         {items ? (
           items.map((product) => {
             return (
-              <Link to={`/products/${product._id}`}>
+              // <Link to={`/products/${product._id}`}>
                 <div className="pList">
-                  <span>{product.title}</span>
-                  <button>Remove</button>
+                  <span>{product?.title}</span>
+                  <button onClick={() => removeFromcart(product?._id)}>Remove</button>
                 </div>
-              </Link>
+              // </Link>
             );
           })
         ) : (

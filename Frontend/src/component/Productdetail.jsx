@@ -18,7 +18,8 @@ function Productdetail() {
       });
   }, []);
 
-  const addtoCart = () => {
+  const addtoCart = (id) => {
+    console.log(id);
     fetch(`http://localhost:5000/addtocart/${id}`, {
       method: "POST",
       headers: {
@@ -31,7 +32,7 @@ function Productdetail() {
       .catch((err) => console.log(err));
   };
 
-  const addtoWishlist = () => {
+  const addtoWishlist = (id) => {
     fetch(`http://localhost:5000/addtowishlist/${id}`, {
       method: "POST",
       headers: {
@@ -59,13 +60,13 @@ function Productdetail() {
 
         <div>
           <button
-            onClick={() => addtoCart()}
+            onClick={() => addtoCart(product._id)}
             style={{ backgroundColor: "rgb(30, 116, 255)" }}
           >
             Add to cart
           </button>
           <button
-            onClick={() => addtoWishlist()}
+            onClick={() => addtoWishlist(product._id)}
             style={{ backgroundColor: " rgb(22, 232, 255)" }}
           >
             Add to wishlist
