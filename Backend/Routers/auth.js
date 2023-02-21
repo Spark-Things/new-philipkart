@@ -12,21 +12,24 @@ router.get("/checkout", requireLogin, (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-  const { name, email, password,cnfpassword } = req.body;
+  const { name, email, password, cnfpassword } = req.body;
 
   if (
     !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       email
     )
   ) {
-    return res.json({ error:"Invalid Email"});
+    return res.json({ error: "Invalid Email" });
   }
   if (!name || !email || !password || !cnfpassword) {
     return res.json({ error: "pehle dang se form bhar le jyada hero mat ban" });
   }
 
-  if(password !== cnfpassword){
-     return res.json({error : "Dono Password same daal , tuje kya laga validation nahi rakha hoga !!"})
+  if (password !== cnfpassword) {
+    return res.json({
+      error:
+        "Dono Password same daal , tuje kya laga validation nahi rakha hoga !!",
+    });
   }
   bcrypt
     .hash(password, 12)
@@ -77,8 +80,8 @@ router.post("/signin", (req, res) => {
           if (doMatch) {
             // res.json({msg : "Successfully Logged In"})
             const token = jwt.sign({ _id: savedUser._id }, JWT_SECRET);
-            const {email,name,_id} = savedUser;
-            res.json({ token: token,user : {email,name,_id} });
+            const { email, name, _id } = savedUser;
+            res.json({ token: token, user: { email, name, _id } });
           } else {
             res.json({ msg: "Enter valid email and password" });
           }
@@ -90,16 +93,12 @@ router.post("/signin", (req, res) => {
     });
 });
 
-
-router.get("/myprofile",requireLogin,(req,res) => {
-  const {_id} = req.user;
-  User.findById({_id})
-  .select("email name _id")
-  .then(result => res.json(result))
-  .catch(err => res.json(err))
-
-})
-
-
+router.get("/myprofile", requireLogin, (req, res) => {
+  const { _id } = req.user;
+  User.findById({ _id })
+    .select("email name _id")
+    .then((result) => res.json(result))
+    .catch((err) => res.json(err));
+});
 
 module.exports = router;

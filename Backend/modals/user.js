@@ -13,13 +13,13 @@ const userschema = new mongoose.Schema({
     type: String,
     required : true
   },
-  cart:{
+  cart:[{
     type:Object
     
-  },
-  wishlist:{
+  }],
+  wishlist:[{
     type:Object
-  }
+  }]
 })
 
 mongoose.model("User",userschema)

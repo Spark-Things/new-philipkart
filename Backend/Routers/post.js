@@ -66,22 +66,22 @@ router.get("/products/:id", (req, res) => {
 });
 
 router.post("/addtocart/:id", requireLogin, (req, res) => {
-  Post.find({ _id: req.params.id }).then((result) => {
-    //  res.json(result);
-    User.findByIdAndUpdate(
-      { _id: req.user?._id },
-      {
-        $push: { cart: result[0] },
-      },
-      { new: true }
-    )
-      .select("email name _id cart wishlist")
-      .exec((err, result) => {
-        if (err) return res.json(err);
-        else {
-          res.json(result);
-        }
-      });
+  Post.findById({ _id: req.params.id }).then((result) => {
+     res.json(result);
+    // User.findByIdAndUpdate(
+    //   { _id: req.user._id },
+    //   {
+    //     $push: { cart:[result[0]] },
+    //   },
+    //   // { new: true }
+    // )
+    //   .select("email name _id cart wishlist")
+    //   .exec((err, result) => {
+    //     if (err) return res.json(err);
+    //     else {
+    //       res.json(result);
+    //     }
+    //   });
   });
 });
 
@@ -121,14 +121,15 @@ router.delete("/deleteItem/:id", requireLogin, (req, res) => {
 });
 
 router.get("/getcartItems", requireLogin, (req, res) => {
-  User.findById({ _id: req.user._id })
-    .then((result) => res.json(result?.car))
-    .catch((err) => res.json(err));
+  console.log(req.user);
+  // User.findById({ _id: req.user._id })
+  //   .then((result) => res.json(result))
+  //   .catch((err) => res.json(err));
 });
 
 router.get("/getWishlist", requireLogin, (req, res) => {
   User.findById({ _id: req.user._id })
-    .then((result) => res.json(result?.wishlist))
+    .then((result) => res.json(result.wishlist))
     .catch((err) => res.json(err));
 });
 
