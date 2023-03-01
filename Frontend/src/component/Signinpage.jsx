@@ -20,42 +20,50 @@ function Signinpage() {
     })
       .then((res) => res.json())
       .then((result) => {
-        localStorage.setItem("jwt", result.token);
-        localStorage.setItem("User", JSON.stringify(result.user));
-        if (localStorage.getItem("User") || localStorage.getItem("jwt")) {
-          navigate("/");
+        if (result.msg) {
+          console.log(result.msg);
+          return;
+        } else {
+          localStorage.setItem("jwt", result.token);
+          localStorage.setItem("User", JSON.stringify(result.user));
+          if (
+            localStorage.getItem("User") != undefined &&
+            localStorage.getItem("jwt") != undefined
+          ) {
+            navigate("/");
+          }
+          console.log(result);
+          console.log(result.user);
         }
-
-        console.log(result);
-        console.log(result.user);
       })
       .catch((err) => console.log(err));
   };
   return (
     <div className="LoginpageScreen">
       <div>
-      <div className="">
-        <label htmlFor="email">Email : </label>
-        <input
-          type="text"
-          name="email"
-          onChange={(e) => setemail(e.target.value)}
-        />
-      </div>
-      <div className="">
-        <label htmlFor="password">password : </label>
-        <input
-          type="password"
-          name="password"
-          onChange={(e) => setpassword(e.target.value)}
-        />
-      </div>
-      <button className="loginbtn" onClick={() => login()}>
-        Login
-      </button>
+        <div className="">
+          <label htmlFor="email">Email : </label>
+          <input
+            type="text"
+            name="email"
+            onChange={(e) => setemail(e.target.value)}
+          />
+        </div>
+        <div className="">
+          <label htmlFor="password">password : </label>
+          <input
+            type="password"
+            name="password"
+            onChange={(e) => setpassword(e.target.value)}
+          />
+        </div>
+        <button className="loginbtn" onClick={() => login()}>
+          Login
+        </button>
 
-
-      <span>New User ? <Link to="/Signup">Sign Up here</Link></span>
+        <span>
+          New User ? <Link to="/Signup">Sign Up here</Link>
+        </span>
       </div>
     </div>
   );

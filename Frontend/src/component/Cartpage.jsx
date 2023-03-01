@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Cartpage() {
-  const [items, setitems] = useState([]);
+  const [items, setitems] = useState();
 
   useEffect(() => {
     fetch("http://localhost:5000/getcartItems", {
@@ -39,7 +39,7 @@ function Cartpage() {
   return (
     <div  className="Cartscreen">
       <div>
-        {items.length > 0 ? (
+        {items ? (
           items.map((product) => {
             return (
               // <Link to={`/products/${product._id}`}>

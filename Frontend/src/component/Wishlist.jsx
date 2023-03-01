@@ -14,7 +14,7 @@ function Wishlist() {
     })
       .then((res) => res.json())
       .then((result) => {
-        setlist(result.Wishlist);
+        setlist(result);
         console.log(result);
       })
       .catch((err) => console.log(err));

@@ -38,15 +38,13 @@ router.post("/signup", (req, res) => {
         if (savedUser) {
           return res.json({ error: "Tu fir aa gaya tu jaa ree signin kar" });
         }
-
         const user = new User({
           name,
           email,
           password: hashedpassword,
         });
 
-        user
-          .save()
+        user.save()
           .then(res.json({ msg: "saved user successfully" }))
           .catch((err) => {
             res.json({ error: err });
