@@ -15,7 +15,7 @@ function Cartpage() {
       .then((res) => res.json())
       .then((result) => {
         setitems(result.cart);
-        console.log(result.cart);
+        // console.log(result);
       });
   }, []);
 
