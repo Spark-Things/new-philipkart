@@ -106,21 +106,21 @@ router.post("/addtowishlist/:id", requireLogin, (req, res) => {
   });
 });
 
-router.delete("/deleteItem/:id", requireLogin, (req, res) => {
-  User.findByIdAndUpdate({ _id: req.user._id })
-    .populate("cart", "_id")
-    .exec((err, item) => {
-      if (err || !item) {
-        return res.status(422).json({ error: err });
-      }
-      item.cart?.map((carted, index) => {
-        if (carted?.id == req.params.id) {
-          item.cart.splice(index, 1);
-          return res.json(item);
-        }
-      });
-    });
-});
+// router.delete("/deleteItem/:id", requireLogin, (req, res) => {
+//   User.findByIdAndUpdate({ _id: req.user._id })
+//     .populate("cart", "_id")
+//     .exec((err, item) => {
+//       if (err || !item) {
+//         return res.status(422).json({ error: err });
+//       }
+//       item.cart?.map((carted, index) => {
+//         if (carted?.id == req.params.id) {
+//           item.cart.splice(index, 1);
+//           return res.json(item);
+//         }
+//       });
+//     });
+// });
 
 router.get("/getcartItems", requireLogin, (req, res) => {
   // console.log(req.user);
