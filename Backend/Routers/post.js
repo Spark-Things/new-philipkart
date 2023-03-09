@@ -122,6 +122,26 @@ router.post("/addtowishlist/:id", requireLogin, (req, res) => {
 //     });
 // });
 
+router.put("/deleteItem/:id",requireLogin,(req,res) => {
+  const productId = req.params.id;
+  User.findByIdAndUpdate({_id : req.user._id})
+  .exec((err,user) => {
+      if(err){
+        return res.json(err)
+      }
+      if(user.cart){
+        // return res.json(user.cart)
+         user.cart.map((product) => {
+        console.log("coming");
+         if(product._id == productId){
+            user.cart.remove(product);
+            return res.json(user.cart);
+         }
+       })
+      }
+  })
+})
+
 router.get("/getcartItems", requireLogin, (req, res) => {
   // console.log(req.user);
   User.findById({ _id: req.user._id })
