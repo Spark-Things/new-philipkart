@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Cartpage() {
-  const [items, setitems] = useState();
+  const [items, setitems] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/getcartItems", {
@@ -21,7 +21,7 @@ function Cartpage() {
 
   const removeFromcart = (id) => {
     fetch(`http://localhost:5000/deleteItem/${id}`,{
-      method:"put",
+      method:"delete",
       headers: {
         "Content-Type": "application/json ",
         authorization : "Bearer " + localStorage.getItem("jwt")
@@ -38,15 +38,15 @@ function Cartpage() {
   return (
     <div  className="Cartscreen">
       <div>
-        {items ? (
+        {items.length > 0 ? (
           items.map((product) => {
             return (
-              <Link to={`/products/${product._id}`}>
-                <div className="pList">
+              <div className="pList">
+                  <Link to={`/products/${product._id}`}>
                   <span>{product?.title}</span>
+                  </Link>
                   <button onClick={() => removeFromcart(product?._id)}>Remove</button>
                 </div>
-               </Link>
             );
           })
         ) : (

@@ -18,9 +18,9 @@ const userschema = new mongoose.Schema({
     ref : "Post"
   }
   ],
-  wishlist:{
+  wishlist:[{
     type:Object
-  }
+  }]
 })
 
 mongoose.model("User",userschema)

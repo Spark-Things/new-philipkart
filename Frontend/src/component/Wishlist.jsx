@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Wishlist() {
-  const [list, setlist] = useState();
+  const [list, setlist] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/getWishlist", {
@@ -19,21 +19,38 @@ function Wishlist() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const removeFromcart = (id) => {
+    fetch(`http://localhost:5000/deleteItemfromWishlist/${id}`,{
+      method:"delete",
+      headers: {
+        "Content-Type": "application/json ",
+        authorization : "Bearer " + localStorage.getItem("jwt")
+      },
+    })
+    .then((res) => res.json())
+    .then((result) => {
+      console.log(result);
+      setlist(result)
+    })
+  }
+
   return (
     <div  className="Cartscreen">
       <div>
-      {list ? (list.map((item) => {
-         return(
-              <Link to={`/products/${item._id}`}>
-                <div className="pList">
-                  <span>{item.title}</span>
-                  <button>Remove</button>
+        {list.length > 0 ? (
+          list.map((product) => {
+            return (
+              <div className="pList">
+                  <Link to={`/products/${product._id}`}>
+                  <span>{product?.title}</span>
+                  </Link>
+                  <button onClick={() => removeFromcart(product?._id)}>Remove</button>
                 </div>
-              </Link>
             );
           })
         ) : (
-          <a>Loding...</a>
+          <a>Your wishlist Is empty</a>
         )}
       </div>
       <Link to={"/checkout"}>
