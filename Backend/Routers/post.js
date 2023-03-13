@@ -21,7 +21,7 @@ router.post("/addproduct", requireLogin, async (req, res) => {
   // });
 
   if (!title || !discription || !price || !category || !Brand) {
-    res.json({ error: "please add all feild" });
+    return res.json({ error: "please add all feild" });
   }
 
   // console.log(result.secure_url);

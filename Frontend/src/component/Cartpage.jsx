@@ -15,7 +15,7 @@ function Cartpage() {
       .then((res) => res.json())
       .then((result) => {
         setitems(result.cart);
-        // console.log(result);
+        console.log(result);
       });
   }, []);
 
@@ -39,11 +39,13 @@ function Cartpage() {
     <div  className="Cartscreen">
       <div>
         {items.length > 0 ? (
-          items.map((product) => {
+          items.map((product,index) => {
             return (
-              <div className="pList">
+              <div className="pList" key={index}>
                   <Link to={`/products/${product._id}`}>
-                  <span>{product?.title}</span>
+                  <span>{product?.title}</span><br/>
+                     <span>{product?.discription}</span><br/>
+                     <span>{product?.price}</span>
                   </Link>
                   <button onClick={() => removeFromcart(product?._id)}>Remove</button>
                 </div>
