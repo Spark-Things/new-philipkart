@@ -6,11 +6,11 @@ function Navbar() {
     <>
       <div className="navbar">
         <Link to="/">
-          <span className="logo">Garibkart</span>
+          <span className="logo">Philipkart</span>
         </Link>
 
         <div>
-          <input type="search" name="" id="" placeholder="Search"/>
+          <input type="search" name="" id="" placeholder="Search" />
           <Link to="/cart">
             <span>Cart</span>
           </Link>
@@ -22,15 +22,15 @@ function Navbar() {
           <Link to="/Addproduct">
             <span>Add product</span>
           </Link>
-          <Link to="/Signup">
-            <span>SignUp</span>
-          </Link>
-          <Link to="/profile">
-            <span>Profile</span>
-          </Link>
-          <Link to="/Signin">
-            <span>SignIn</span>
-          </Link>
+          {localStorage.getItem("User") ? (
+            <Link to="/profile">
+              <span>Profile</span>
+            </Link>
+          ) : (
+            <Link to="/Signin">
+              <span>SignIn</span>
+            </Link>
+          )}
         </div>
       </div>
     </>

@@ -8,37 +8,14 @@ function Addproduct() {
   const [category, setcategory] = useState();
   const [Brand, setBrand] = useState();
   const [image, setimage] = useState();
+  const [ImgUrl, setImgUrl] = useState();
 
-  console.log(import.meta.env.VITE_CLOUD_NAME);
+  // console.log(import.meta.env.VITE_CLOUD_NAME);
 
-  const addItems = async () => {
-    if (image) {
-      // uploading image to cloudinary
-      const formData = new FormData();
-      formData.append("file", image);
-      formData.append(
-        "upload_preset",
-        import.meta.env.VITE_CLOUDINARY_PRESET
-      );
-      formData.append("folder", import.meta.env.VITE_CLOUDINARY_FOLDER);
-      // console.log(formData);
-
-      const res = await fetch(
-        `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME}/upload`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      ).then((response) => response.json())
-      .then((result) => console.log(result))
-      // const index = res.secure_url.lastIndexOf("/");
-      // const imgName = res.secure_url.substring(index + 1);
-      // setimage(imgName);
-    }
-  };
-
-  useEffect(() => {
-    fetch("http://localhost:5000/addproduct", {
+  const addProductToDb = () => {
+    console.log(ImgUrl);
+    console.log(category);
+    ImgUrl ? fetch("http://localhost:5000/addproduct", {
       method: "POST",
       headers: {
         authorization: "Bearer " + localStorage.getItem("jwt"),
@@ -48,15 +25,44 @@ function Addproduct() {
         title,
         discription,
         price,
-        image,
+        image:ImgUrl,
         category,
         Brand,
       }),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
-  }, []);
+      .then((result) => console.log(result))
+  : console.log("Image Url Not Found");
+  }  
+  const addImage = async () => {
+    if (image) {
+      // uploading image to cloudinary
+      const formData = new FormData();
+      formData.append("file", image);
+      formData.append("upload_preset", import.meta.env.VITE_CLOUDINARY_PRESET);
+      formData.append("folder", import.meta.env.VITE_CLOUDINARY_FOLDER);
+      // console.log(formData);
 
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/${
+          import.meta.env.VITE_CLOUD_NAME
+        }/upload`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          return(
+          console.log(result), 
+          setImgUrl(result.secure_url))
+        });
+    }
+  };
+   useEffect(() =>{
+     addImage()
+   },[image])
   return (
     <div className="addProductScreen">
       <div>
@@ -95,10 +101,11 @@ function Addproduct() {
         <label>upload image : </label>
         <input
           type="file"
-          onChange={(e) => setimage(e.target.files[0])}
+          onChange={(e) =>
+            setimage(e.target.files[0])}
         ></input>
       </div>
-      <button onClick={() => addItems()}>Add</button>
+      <button onClick={() => addProductToDb()}>Add</button>
     </div>
   );
 }

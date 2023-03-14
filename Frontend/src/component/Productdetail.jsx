@@ -47,7 +47,9 @@ function Productdetail() {
 
   return (
     <div className="productdetailconatiner">
-      <div className="productImageConatiner"></div>
+      <div className="productImageConatiner">
+          <img src={product?.photo}/>
+      </div>
       <div className="productdiscConatiner">
         {product ? (
           <span className="title">{product.title}</span>

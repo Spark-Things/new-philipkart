@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function Profile() {
+  const [User, setUser] = useState();
   useEffect(() => {
     fetch("http://localhost:5000/myprofile", {
       method: "get",
@@ -11,35 +12,24 @@ function Profile() {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-        setUser(result);
-        console.log(User);
-      });
+        setUser(result),
+          // console.log(result);
+          console.log(User);
+      })
+      .catch(err => console.log(err))
   }, []);
 
-
   const onLogout = () => {
-    localStorage.removeItem('User');
-    localStorage.removeItem('jwt');
-  }
-
-
-
-  const [User, setUser] = useState([]);
+    localStorage.removeItem("User");
+    localStorage.removeItem("jwt");
+  };
 
   console.log(User);
 
   return (
     <div className="profilrcontainer">
-      { User.length > 0 ? (
-        User.map((data) => {
-          return <span>{data.name}</span>;
-        })
-      ) : (
-        <span>Loading .. .. .. .. .. .. </span>
-      )}
-      <span>hello spark</span><br/>
-
+        <span className="">Hello ,{User?.name}</span>
+      <br />
 
       <button onClick={onLogout}>Logout</button>
     </div>

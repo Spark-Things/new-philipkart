@@ -1,8 +1,5 @@
 @import "./common";
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap');
 
 * {
@@ -196,7 +193,7 @@ a{
   background-color: lightblue;
   padding: 0 5rem;
   .productImageConatiner {
-    height: 10rem;
+    height: max-content;
     width: 85rem;
     background-color: rgb(255, 95, 255);
   }
@@ -259,6 +256,7 @@ a{
   .pList{
     height: max-content;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     // background-color: rgb(199, 67, 67);
     border-bottom: 1px #cacaca solid;

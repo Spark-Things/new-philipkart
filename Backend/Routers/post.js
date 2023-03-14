@@ -19,19 +19,25 @@ router.post("/addproduct", requireLogin, async (req, res) => {
   // const result = await cloudinary.uploader.upload(image, {
   //   folder: "philipkart"
   // });
+  // console.log(title);
+  // console.log(discription);
+  // console.log(price);
+  // console.log(category);
+  // console.log(Brand)
+  // console.log(image);
 
-  if (!title || !discription || !price || !category || !Brand) {
+  if (!title || !discription || !price || !category || !Brand || !image) {
     return res.json({ error: "please add all feild" });
   }
 
-  // console.log(result.secure_url);
+  // console.log(image);
 
   req.user.password = undefined;
   const post = new Post({
     title,
     discription,
     price,
-    image,
+    photo: image,
     category,
     Brand,
     author: req.user,
@@ -71,7 +77,7 @@ router.post("/addtocart/:id", requireLogin, (req, res) => {
 
     // User.findById({_id :req.user._id}).then(result => res.json(result))
     User.findByIdAndUpdate(
-      {_id: req.user._id },
+      { _id: req.user._id },
       {
         $push: { cart: result },
       },
@@ -80,9 +86,9 @@ router.post("/addtocart/:id", requireLogin, (req, res) => {
       .select("email name _id cart wishlist")
       .exec((err, results) => {
         if (result) {
-           return res.json(results)
+          return res.json(results);
         }
-        if(err) console.log(err);
+        if (err) console.log(err);
       });
   });
 });
@@ -122,44 +128,41 @@ router.post("/addtowishlist/:id", requireLogin, (req, res) => {
 //     });
 // });
 
-router.delete("/deleteItem/:id",requireLogin,(req,res) => {
+router.delete("/deleteItem/:id", requireLogin, (req, res) => {
   const productId = req.params.id;
-  User.findByIdAndUpdate({_id : req.user._id})
-  .exec((err,user) => {
-      if(err){
-        return res.json(err)
-      }
-      if(user?.cart){
-         user.cart.map((product) => {
-         if(product._id == productId){
-            user.cart.remove(product);
-            user.save();
-            return res.json(user.cart);
-         }
-       })
-      }
-  })
-})
+  User.findByIdAndUpdate({ _id: req.user._id }).exec((err, user) => {
+    if (err) {
+      return res.json(err);
+    }
+    if (user?.cart) {
+      user.cart.map((product) => {
+        if (product._id == productId) {
+          user.cart.remove(product);
+          user.save();
+          return res.json(user.cart);
+        }
+      });
+    }
+  });
+});
 
-
-router.delete("/deleteItemfromWishlist/:id",requireLogin,(req,res) => {
+router.delete("/deleteItemfromWishlist/:id", requireLogin, (req, res) => {
   const productId = req.params.id;
-  User.findByIdAndUpdate({_id : req.user._id})
-  .exec((err,user) => {
-      if(err){
-        return res.json(err)
-      }
-      if(user?.wishlist){
-         user?.wishlist.map((product) => {
-         if(product._id == productId){
-            user.wishlist.remove(product);
-            user.save();
-            return res.json(user.wishlist);
-         }
-       })
-      }
-  })
-})
+  User.findByIdAndUpdate({ _id: req.user._id }).exec((err, user) => {
+    if (err) {
+      return res.json(err);
+    }
+    if (user?.wishlist) {
+      user?.wishlist.map((product) => {
+        if (product._id == productId) {
+          user.wishlist.remove(product);
+          user.save();
+          return res.json(user.wishlist);
+        }
+      });
+    }
+  });
+});
 
 router.get("/getcartItems", requireLogin, (req, res) => {
   // console.log(req.user);

@@ -12,8 +12,8 @@ const Postschema = new mongoose.Schema({
     },
     photo:{
      type:String,
-    //  required: true,
-     default:"No photo"
+     required: true,
+    //  default:"No photo"
     },
     price:{
       type:Number,
@@ -22,11 +22,6 @@ const Postschema = new mongoose.Schema({
     author:{
       type: ObjectId,
       ref:"User"
-    },
-    image:{
-      url : {
-      type:String,
-      },
     },
     category:{
        type:String,

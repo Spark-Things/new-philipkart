@@ -208,7 +208,8 @@ a {
   padding: 0 5rem;
 }
 .productdetailconatiner .productImageConatiner {
-  height: 10rem;
+  height: -moz-max-content;
+  height: max-content;
   width: 85rem;
   background-color: rgb(255, 95, 255);
 }
@@ -280,6 +281,7 @@ a {
   height: -moz-max-content;
   height: max-content;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px #cacaca solid;
   padding: 10px;

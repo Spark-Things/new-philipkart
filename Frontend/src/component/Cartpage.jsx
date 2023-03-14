@@ -20,35 +20,38 @@ function Cartpage() {
   }, []);
 
   const removeFromcart = (id) => {
-    fetch(`http://localhost:5000/deleteItem/${id}`,{
-      method:"delete",
+    fetch(`http://localhost:5000/deleteItem/${id}`, {
+      method: "delete",
       headers: {
         "Content-Type": "application/json ",
-        authorization : "Bearer " + localStorage.getItem("jwt")
+        authorization: "Bearer " + localStorage.getItem("jwt"),
       },
     })
-    .then((res) => res.json())
-    .then((result) => {
-      console.log(result);
-      setitems(result)
-    })
-  }
-
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        setitems(result);
+      });
+  };
 
   return (
-    <div  className="Cartscreen">
+    <div className="Cartscreen">
       <div>
         {items.length > 0 ? (
-          items.map((product,index) => {
+          items.map((product, index) => {
             return (
               <div className="pList" key={index}>
-                  <Link to={`/products/${product._id}`}>
-                  <span>{product?.title}</span><br/>
-                     <span>{product?.discription}</span><br/>
-                     <span>{product?.price}</span>
-                  </Link>
-                  <button onClick={() => removeFromcart(product?._id)}>Remove</button>
-                </div>
+                <Link to={`/products/${product._id}`}>
+                  <span>{product?.title}</span>
+                  <br />
+                  <span>{product?.discription}</span>
+                  <br />
+                  <span>{product?.price}</span>
+                </Link>
+                <button onClick={() => removeFromcart(product?._id)}>
+                  Remove
+                </button>
+              </div>
             );
           })
         ) : (

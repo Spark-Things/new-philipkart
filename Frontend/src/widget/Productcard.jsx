@@ -7,11 +7,13 @@ function Productcard({ data }) {
   return (
     <>
         {data ? (
-          data.map((item) => {
+          data.map((item,index) => {
             return (
             <Link to={`products/${item._id}`} >
-              <div className="cardLayout">
-                <div className="imageconatiner"></div>
+              <div className="cardLayout" key={index}>
+                <div className="imageconatiner">
+                    <img src={item?.photo} />
+                </div>
                 <div className="detailcontainer">
                   <h5>{item.title}</h5>
                   <span>{item.price}</span>
