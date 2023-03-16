@@ -41,13 +41,16 @@ function Cartpage() {
           items.map((product, index) => {
             return (
               <div className="pList" key={index}>
-                <Link to={`/products/${product._id}`}>
-                  <span>{product?.title}</span>
-                  <br />
-                  <span>{product?.discription}</span>
-                  <br />
-                  <span>{product?.price}</span>
-                </Link>
+                <div>
+                  <img src={product.photo} /> 
+                  <Link to={`/products/${product._id}`}>
+                    <div className="ttc">
+                      <span>{product?.title}</span>
+                      <p>{product?.discription}</p>
+                    </div>
+                  </Link>
+                </div>
+                <span>₹{product?.price}</span>
                 <button onClick={() => removeFromcart(product?._id)}>
                   Remove
                 </button>

@@ -48,7 +48,7 @@ function Productdetail() {
   return (
     <div className="productdetailconatiner">
       <div className="productImageConatiner">
-          <img src={product?.photo}/>
+        <img src={product?.photo} />
       </div>
       <div className="productdiscConatiner">
         {product ? (
@@ -57,8 +57,8 @@ function Productdetail() {
           <span>Loading...</span>
         )}
         <em>Special price</em>
-        {product ? <h1>₹{product.price}</h1> : <span>Loading...</span>}
         {product ? <p>{product.discription}</p> : <span>Loading...</span>}
+        {product ? <h1>₹{product.price}</h1> : <span>Loading...</span>}
 
         <div>
           <button

@@ -1,20 +1,20 @@
 @import "./common";
 @import "./variable";
-@import url('https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
 
 * {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
   color: $black;
-  font-family: 'Saira', sans-serif;
+  font-family: "Saira", sans-serif;
   text-transform: capitalize;
 }
 html {
   font-size: 62.5%;
 }
-a{
+a {
   text-decoration: none;
 }
 
@@ -26,32 +26,32 @@ a{
   padding: 2rem;
   align-items: center;
 
-  .logo{
-    font-family: 'Syncopate', sans-serif;
-     color: white;
+  .logo {
+    font-family: "Syncopate", sans-serif;
+    color: white;
     font-size: 3rem;
     letter-spacing: 2px;
   }
-  div{
+  div {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: max-content;
-    span{
+    span {
       font-size: 18px;
       color: rgb(255, 255, 255);
-      padding: .5rem 2rem;
+      padding: 0.5rem 2rem;
       &:hover {
-        background-color:  #8e8e8e78;
+        background-color: #8e8e8e78;
         border-radius: 5px;
       }
     }
   }
-  .SeachbarContainer{
+  .SeachbarContainer {
     width: 30%;
   }
-  .Seachbar{
+  .Seachbar {
     width: 100%;
     background-color: #cacacaa4;
     font-size: 16px;
@@ -60,11 +60,11 @@ a{
     border-radius: 5px;
     border: 1px solid #cacaca;
     margin-right: 2rem;
-    &::placeholder{
+    &::placeholder {
       color: white;
     }
-    &:focus{
-      &::placeholder{
+    &:focus {
+      &::placeholder {
         color: $black;
       }
       outline: 0;
@@ -81,9 +81,9 @@ a{
   justify-content: space-between;
   padding: 1rem;
 
-   span{
+  span {
     color: white;
-   }
+  }
 }
 .Adcontainer {
   @include row();
@@ -114,7 +114,7 @@ a{
   background-color: $white;
 }
 ::-webkit-scrollbar {
-  width: 10px; 
+  width: 10px;
   height: 100%;
 }
 /* Track */
@@ -143,7 +143,7 @@ a{
   flex-direction: row;
   border-bottom: 1px #cacaca solid;
   scroll-behavior: smooth;
-  .productCardConatiner{
+  .productCardConatiner {
     display: flex;
     width: 100%;
     overflow-x: auto;
@@ -151,7 +151,7 @@ a{
     height: 38vh;
     &::-webkit-scrollbar {
       padding: 20px;
-      width: 100%; 
+      width: 100%;
       height: 10px;
     }
     /* Track */
@@ -159,19 +159,18 @@ a{
       width: 100%;
       background: transparent;
     }
-    
+
     /* Handle */
     &::-webkit-scrollbar-thumb {
-      max-width: 10%; 
+      max-width: 10%;
       background: rgba(92, 92, 92, 0.579);
       border-radius: 10px;
     }
-    
+
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
       background: #555;
     }
-
   }
   .panel1 {
     min-width: 23rem;
@@ -181,7 +180,7 @@ a{
     text-align: center;
     padding: 1rem;
     justify-content: center;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 
     span {
       text-transform: capitalize;
@@ -195,49 +194,56 @@ a{
       align-items: center;
       button {
         @include cmnBTN();
-
       }
     }
   }
 }
 
-
 .productdetailconatiner {
   @include row();
   background-color: lightblue;
-  padding: 0 5rem;
+  padding: 0 15rem;
   .productImageConatiner {
-    height: max-content;
+    height: 60vh;
     width: 85rem;
-    background-color: rgb(255, 95, 255);
+    background-color: $white;
+    padding: 2rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
   .productdiscConatiner {
     width: 100%;
-    height: max-content;
-    padding: 2rem;
-    background-color: rgb(255, 255, 255);
+    height: 60vh;
+    max-height: max-content;
+    padding: 5rem;
+    background-color: $white;
     display: flex;
     flex-direction: column;
-    .title{
-      font-size: 2.4rem;
+    .title {
+      font-size: 3rem;
       font-weight: 500;
       line-height: 4rem;
     }
-    h1{
+    h1 {
       font-size: 3rem;
       line-height: 4rem;
       font-weight: 550;
+      margin: 2rem 0;
     }
-    em{
-      font-size: 1.6rem;
+    em {
+      font-size: 1.4rem;
       color: rgb(30, 116, 255);
     }
-    p{
+    p {
       color: #525252;
-      font-size: 2rem;
-      letter-spacing: .1rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
     }
-    button{
+    button {
+      color: $white;
       padding: 1rem;
       min-width: 30%;
       margin: 1rem;
@@ -258,80 +264,106 @@ a{
   }
 }
 
-.FilterList{
-   min-width: 20%;
-   height: 100vh;
-   background-color: aqua;
+.FilterList {
+  min-width: 20%;
+  height: 100vh;
+  background-color: aqua;
 }
-.Cartscreen{
+.Cartscreen {
   width: 100%;
   height: 100%;
   padding: 10px 25%;
-  .pList{
+  .pList {
     height: max-content;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     // background-color: rgb(199, 67, 67);
     border-bottom: 1px #cacaca solid;
     padding: 10px;
-    span{
+    align-items: center;
+    div {
+      display: flex;
+      flex-direction: row;
+      width: max-content;
+      width: 100%;
+      img {
+        height: 10vh;
+        width: 10vh;
+        object-fit: contain;
+      }
+       .ttc{
+        width: 40rem;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        p {
+          max-width: 20rem;
+        }
+        span{
+          width: 100%;
+        }
+      }
+    }
+    span {
+      width: 20%;
       font-size: 18px;
     }
-    button{
+    button {
       padding: 2% 3%;
       background-color: rgb(205, 41, 41);
       margin-top: 0px;
     }
   }
 
-  button{
-      @include cmnBTN();
+  button {
+    @include cmnBTN();
   }
 }
 
-.addProductScreen{
-   @include commonScreen();
-  div{
+.addProductScreen {
+  @include commonScreen();
+  div {
     @include inputConainer();
 
-    label{
-       @include labels();
+    label {
+      @include labels();
     }
-    input,select{
+    input,
+    select {
       @include inputs();
     }
-
   }
-  button{
+  button {
     @include cmnBTN();
     padding: 1% 5%;
   }
 }
 
-.LoginpageScreen{
+.LoginpageScreen {
   @include commonScreen();
   height: 82.95vh;
-  div{
+  div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    div{
+    div {
       @include inputConainer();
-  
-      label{
+
+      label {
         @include labels();
       }
-      input{
+      input {
         @include inputs();
       }
     }
-    button{
+    button {
       @include cmnBTN();
       padding: 1% 5%;
     }
-    span{
-      a{
+    span {
+      a {
         color: rgb(46, 43, 226);
         text-decoration: underline;
       }
@@ -339,5 +371,4 @@ a{
       font-size: 1.6rem;
     }
   }
-
 }
