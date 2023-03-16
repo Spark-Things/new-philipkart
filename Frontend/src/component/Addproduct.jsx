@@ -81,12 +81,21 @@ function Addproduct() {
         ></input>
       </div>
       <div>
+        <label>upload image : </label>
+        <input
+          type="file"
+          onChange={(e) =>
+            setimage(e.target.files[0])}
+        ></input>
+      </div>
+      <div>
         <label>price :</label>
         <input type="number" onChange={(e) => setprice(e.target.value)}></input>
       </div>
       <div>
         <label>category</label>
         <select onChange={(e) => setcategory(e.target.value)}>
+          <option>Not selected</option>
           <option>Electronic</option>
           <option>Mobile</option>
           <option>Shoes</option>
@@ -96,14 +105,6 @@ function Addproduct() {
       <div>
         <label>Brand Name : </label>
         <input type="text" onChange={(e) => setBrand(e.target.value)}></input>
-      </div>
-      <div>
-        <label>upload image : </label>
-        <input
-          type="file"
-          onChange={(e) =>
-            setimage(e.target.files[0])}
-        ></input>
       </div>
       <button onClick={() => addProductToDb()}>Add</button>
     </div>

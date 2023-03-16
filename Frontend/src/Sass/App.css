@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
 * {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
-  font-family: sans-serif;
-  color: rgb(255, 255, 255);
+  color: #252525;
   font-family: "Saira", sans-serif;
   text-transform: capitalize;
 }
@@ -21,14 +20,15 @@ a {
 .navbar {
   width: 100%;
   display: flex;
-  background-color: #202020;
+  background-color: #212CAE;
   justify-content: space-between;
   padding: 2rem;
+  align-items: center;
 }
 .navbar .logo {
-  font-family: "Rancho", cursive;
+  font-family: "Syncopate", sans-serif;
   color: white;
-  font-size: 36px;
+  font-size: 3rem;
   letter-spacing: 2px;
 }
 .navbar div {
@@ -42,28 +42,45 @@ a {
 .navbar div span {
   font-size: 18px;
   color: rgb(255, 255, 255);
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
 }
 .navbar div span:hover {
-  background-color: rgba(85, 85, 85, 0.4705882353);
+  background-color: rgba(142, 142, 142, 0.4705882353);
   border-radius: 5px;
 }
-.navbar div input {
-  color: white;
-  background-color: #525252;
+.navbar .SeachbarContainer {
+  width: 30%;
+}
+.navbar .Seachbar {
+  width: 100%;
+  background-color: rgba(202, 202, 202, 0.6431372549);
   font-size: 16px;
+  color: #252525;
   padding: 8px;
   border-radius: 5px;
-  border: 0;
+  border: 1px solid #cacaca;
   margin-right: 2rem;
 }
-.navbar div input:focus {
-  border: 1px #363636 solid;
+.navbar .Seachbar::-moz-placeholder {
+  color: white;
+}
+.navbar .Seachbar::placeholder {
+  color: white;
+}
+.navbar .Seachbar:focus {
+  outline: 0;
+  background-color: #cacaca;
+}
+.navbar .Seachbar:focus::-moz-placeholder {
+  color: #252525;
+}
+.navbar .Seachbar:focus::placeholder {
+  color: #252525;
 }
 
 .catagorycontainer {
   font-size: 1.6rem;
-  background-color: rgb(98, 98, 98);
+  background-color: #808291;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -78,32 +95,20 @@ a {
   height: 100vh;
   display: flex;
   flex-direction: row;
-  height: -moz-max-content;
-  height: max-content;
-  background-color: rgb(255, 249, 168);
+  height: 40vh;
 }
 .Adcontainer img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.Adcontainer button {
-  padding: 5rem 1.5rem;
-  align-self: center;
-  margin: auto;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 5px;
-}
-.Adcontainer button:hover {
-  background-color: #525252;
 }
 
 .maincontainer {
   height: -moz-max-content;
   height: max-content;
   width: 100%;
-  background-color: #202020;
+  background-color: #FBFAFB;
 }
 
 ::-webkit-scrollbar {
@@ -132,10 +137,10 @@ a {
   height: -moz-max-content;
   height: max-content;
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px #3b3b3b solid;
+  border-bottom: 1px #cacaca solid;
   scroll-behavior: smooth;
 }
 .container .productCardConatiner {
@@ -177,7 +182,7 @@ a {
 .container .panel1 span {
   text-transform: capitalize;
   font-size: 2.4rem;
-  color: white;
+  color: #252525;
 }
 .container .panel1 a {
   width: 100%;

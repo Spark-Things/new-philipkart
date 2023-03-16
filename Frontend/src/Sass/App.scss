@@ -1,13 +1,13 @@
 @import "./common";
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import "./variable";
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
 
 * {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
-  font-family: sans-serif;
-  color: rgb(255, 255, 255);
+  color: $black;
   font-family: 'Saira', sans-serif;
   text-transform: capitalize;
 }
@@ -21,14 +21,15 @@ a{
 .navbar {
   width: 100%;
   display: flex;
-  background-color: #202020;
+  background-color: $main_color;
   justify-content: space-between;
   padding: 2rem;
+  align-items: center;
 
   .logo{
-    font-family: 'Rancho', cursive;
+    font-family: 'Syncopate', sans-serif;
      color: white;
-    font-size: 36px;
+    font-size: 3rem;
     letter-spacing: 2px;
   }
   div{
@@ -40,29 +41,41 @@ a{
     span{
       font-size: 18px;
       color: rgb(255, 255, 255);
-      padding: 1rem 2rem;
+      padding: .5rem 2rem;
       &:hover {
-        background-color:  #55555578;
+        background-color:  #8e8e8e78;
         border-radius: 5px;
       }
     }
-    input{
+  }
+  .SeachbarContainer{
+    width: 30%;
+  }
+  .Seachbar{
+    width: 100%;
+    background-color: #cacacaa4;
+    font-size: 16px;
+    color: $black;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #cacaca;
+    margin-right: 2rem;
+    &::placeholder{
       color: white;
-      background-color: #525252;
-      font-size: 16px;
-      padding: 8px;
-      border-radius: 5px;
-      border: 0;
-      margin-right: 2rem;
-      &:focus{
-        border: 1px #363636 solid;
+    }
+    &:focus{
+      &::placeholder{
+        color: $black;
       }
+      outline: 0;
+      background-color: #cacaca;
     }
   }
 }
+
 .catagorycontainer {
   font-size: 1.6rem;
-  background-color: rgb(98, 98, 98);
+  background-color: $grey;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -74,30 +87,31 @@ a{
 }
 .Adcontainer {
   @include row();
-  height: max-content;
-  background-color: rgb(255, 249, 168);
+  height: 40vh;
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
-  button{
-    padding: 5rem 1.5rem;
-    align-self: center;
-    margin: auto;
-    background-color: transparent;
-    border: 0px;
-    border-radius: 5px;
+  // button{
+  //   padding: 5rem 1.5rem;
+  //   align-self: center;
+  //   margin: auto;
+  //   color: black;
+  //   background-color: white;
+  //   border: 0px;
+  //   border-radius: 5px;
 
-    &:hover{
-      background-color: #525252;
-    }
-  }
+  //   &:hover{
+  //     background-color: #525252;
+  //   }
+  // }
 }
 
 .maincontainer {
   height: max-content;
   width: 100%;
-  background-color: #202020;
+  background-color: $white;
 }
 ::-webkit-scrollbar {
   width: 10px; 
@@ -124,10 +138,10 @@ a{
   height: max-content;
   width: 100%;
   // background-color: yellow;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px #3b3b3b solid;
+  border-bottom: 1px #cacaca solid;
   scroll-behavior: smooth;
   .productCardConatiner{
     display: flex;
@@ -172,7 +186,7 @@ a{
     span {
       text-transform: capitalize;
       font-size: 2.4rem;
-      color: white;
+      color: $black;
     }
     a {
       width: 100%;

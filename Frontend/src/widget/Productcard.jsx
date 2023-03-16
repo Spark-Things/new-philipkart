@@ -6,26 +6,29 @@ function Productcard({ data }) {
   // console.log(data);
   return (
     <>
-        {data ? (
-          data.map((item,index) => {
-            return (
-            <Link to={`products/${item._id}`} >
+      {data ? (
+        data.map((item, index) => {
+          return (
+            <Link to={`products/${item._id}`}>
               <div className="cardLayout" key={index}>
                 <div className="imageconatiner">
-                    <img src={item?.photo} />
+                  <img src={item?.photo} />
                 </div>
                 <div className="detailcontainer">
                   <h5>{item.title}</h5>
-                  <span>{item.price}</span>
-                  <span>{item.discription}</span>
+                  <p>{item.discription}</p>
+                  <div className="">
+                     <span>₹{item.price}</span>
+                     <button>buy Now</button>
+                  </div>
                 </div>
               </div>
-              </Link>  
-            );
-          })
-        ) : (
-          <span>loading..</span>
-        )}
+            </Link>
+          );
+        })
+      ) : (
+        <span>loading..</span>
+      )}
     </>
   );
 }

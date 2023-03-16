@@ -8,9 +8,10 @@ function Navbar() {
         <Link to="/">
           <span className="logo">Philipkart</span>
         </Link>
-
+           <div className="SeachbarContainer">
+             <input className="Seachbar" type="search" name="" id="" placeholder="Search" />
+           </div>
         <div>
-          <input type="search" name="" id="" placeholder="Search" />
           <Link to="/cart">
             <span>Cart</span>
           </Link>

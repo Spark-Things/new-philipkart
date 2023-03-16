@@ -6,26 +6,21 @@ import three from "../Images/3.jpg";
 
 function Home() {
   const [Disp, setDisp] = useState(1);
+  
+   setInterval(() => {
+     if(Disp < 1){
+        return setDisp(1);
+     }
+    Disp > 0 ?
+     setDisp(Disp <= 3 && Disp > 1 ? Disp - 1 : 3) :null
+   },3000)
 
-  console.log(Disp);
   return (
     <div className="maincontainer">
       <div className="Adcontainer">
         {Disp == 1 ? <img className="ads" src={one}></img> : null}
         {Disp == 2 ? <img className="ads" src={two}></img> : null}
         {Disp == 3 ? <img className="ads" src={three}></img> : null}
-        <button
-          style={{ position: "absolute", left: "5px" }}
-          onClick={() => setDisp(Disp < 3 ? Disp + 1 : 1)}
-        >
-          {"<"}
-        </button>
-        <button
-          style={{ position: "absolute", right: "5px" }}
-          onClick={() => setDisp(Disp <= 3 && Disp > 1 ? Disp - 1 : 3)}
-        >
-          {">"}
-        </button>
       </div>
       <Panelcontainer category="Shoes" />
       <Panelcontainer category="Mobile" />
