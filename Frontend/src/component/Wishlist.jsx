@@ -30,7 +30,7 @@ function Wishlist() {
     })
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       setlist(result)
     })
   }
@@ -39,16 +39,27 @@ function Wishlist() {
     <div  className="Cartscreen">
       <div>
         {list.length > 0 ? (
-          list.map((product) => {
-            return (
-              <div className="pList">
-                  <Link to={`/products/${product._id}`}>
-                  <span>{product?.title}</span>
-                  </Link>
-                  <button onClick={() => removeFromcart(product?._id)}>Remove</button>
+          (
+            list.map((product, index) => {
+              return (
+                <div className="pList" key={index}>
+                  <div>
+                    <img src={product.photo} /> 
+                    <Link to={`/products/${product._id}`}>
+                      <div className="ttc">
+                        <span>{product?.title}</span>
+                        <p>{product?.discription}</p>
+                      </div>
+                    </Link>
+                  </div>
+                  <span>₹{product?.price}</span>
+                  <button onClick={() => removeFromcart(product?._id)}>
+                    Remove
+                  </button>
                 </div>
-            );
-          })
+              );
+            })
+          ) 
         ) : (
           <a>Your wishlist Is empty</a>
         )}
