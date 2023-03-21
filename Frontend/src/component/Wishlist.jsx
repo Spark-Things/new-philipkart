@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function Wishlist() {
   const [list, setlist] = useState([]);
+  var total = 0;
 
   useEffect(() => {
     fetch("http://localhost:5000/getWishlist", {
@@ -41,6 +42,7 @@ function Wishlist() {
         {list.length > 0 ? (
           (
             list.map((product, index) => {
+                 total = total + product?.price
               return (
                 <div className="pList" key={index}>
                   <div>
@@ -64,9 +66,12 @@ function Wishlist() {
           <a>Your wishlist Is empty</a>
         )}
       </div>
+      <div>
+      <span>{total}</span><br/>
       <Link to={"/checkout"}>
         <button>CheckOut</button>
       </Link>
+      </div>
     </div>
   );
 }

@@ -287,54 +287,84 @@ a {
 }
 
 .Cartscreen {
-  width: 100%;
-  height: 100%;
-  padding: 10px 25%;
-}
-.Cartscreen .pList {
-  height: -moz-max-content;
-  height: max-content;
-  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  padding: 10px 13%;
+}
+.Cartscreen .listContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
+  align-items: center;
+}
+.Cartscreen .listContainer .pList {
+  height: -moz-max-content;
+  height: max-content;
+  min-width: 90%;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
   border-bottom: 1px #cacaca solid;
   padding: 10px;
   align-items: center;
 }
-.Cartscreen .pList div {
+.Cartscreen .listContainer .pList div {
   display: flex;
   flex-direction: row;
-  width: -moz-max-content;
-  width: max-content;
-  width: 100%;
 }
-.Cartscreen .pList div img {
+.Cartscreen .listContainer .pList div img {
   height: 10vh;
   width: 10vh;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.Cartscreen .pList div .ttc {
-  width: 40rem;
+.Cartscreen .listContainer .pList div .ttc {
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 30rem;
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
 }
-.Cartscreen .pList div .ttc p {
+.Cartscreen .listContainer .pList div .ttc p {
   max-width: 20rem;
 }
-.Cartscreen .pList div .ttc span {
+.Cartscreen .listContainer .pList div .ttc span {
   width: 100%;
+  padding: 0px;
 }
-.Cartscreen .pList span {
-  width: 20%;
+.Cartscreen .listContainer .pList span {
+  min-width: 18%;
   font-size: 18px;
 }
-.Cartscreen .pList button {
+.Cartscreen .listContainer .pList button {
+  width: -moz-max-content;
+  width: max-content;
   padding: 2% 3%;
   background-color: rgb(205, 41, 41);
   margin-top: 0px;
+}
+.Cartscreen .checkoutContainer {
+  background-color: rgb(229, 229, 229);
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+}
+.Cartscreen .checkoutContainer .totalAmount {
+  font-size: 24px;
+}
+.Cartscreen .checkoutContainer a button {
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
 }
 .Cartscreen button {
   cursor: pointer;

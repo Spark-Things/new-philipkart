@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function Cartpage() {
   const [items, setitems] = useState([]);
+  var TotalAmount = 0;
 
   useEffect(() => {
     fetch("http://localhost:5000/getcartItems", {
@@ -36,9 +37,10 @@ function Cartpage() {
 
   return (
     <div className="Cartscreen">
-      <div>
+      <div className="listContainer">
         {items.length > 0 ? (
           items.map((product, index) => {
+            TotalAmount += product?.price;
             return (
               <div className="pList" key={index}>
                 <div>
@@ -51,8 +53,7 @@ function Cartpage() {
                   </Link>
                 </div>
                 <span>₹{product?.price}</span>
-                <button onClick={() => removeFromcart(product?._id)}>
-                  Remove
+                <button onClick={() => removeFromcart(product?._id)}>  Remove
                 </button>
               </div>
             );
@@ -61,9 +62,12 @@ function Cartpage() {
           <a>Your cart Is empty</a>
         )}
       </div>
-      <Link to={"/checkout"}>
-        <button>CheckOut</button>
-      </Link>
+      <div className="checkoutContainer">
+         <span className="totalAmount">₹ {TotalAmount}</span>
+           <Link to={"/checkout"}>
+             <button>CheckOut</button>
+          </Link>
+      </div>
     </div>
   );
 }
