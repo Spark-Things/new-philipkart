@@ -5,6 +5,15 @@ function Productdetail() {
   const { id } = useParams();
   const [product, setproduct] = useState();
 
+  var Op =  Math.floor(Math.random()*10000);
+
+  function getDiscount(Op,price){
+    var ans = (price*100)/Op;
+    console.log(ans);
+    return 100 - Math.floor(ans);
+  }
+
+
   useEffect(() => {
     fetch(`http://localhost:5000/products/${id}`, {
       method: "get",
@@ -57,8 +66,12 @@ function Productdetail() {
           <span>Loading...</span>
         )}
         <em>Special price</em>
-        {product ? <p>{product.discription}</p> : <span>Loading...</span>}
-        {product ? <h1>₹{product.price}</h1> : <span>Loading...</span>}
+        <div className="prices">
+        {product ? <h1>₹{product?.price}</h1> : <span>Loading...</span>}
+          <span>Rs. {product?.price + Op}</span> 
+          <span className="discount">SAVE {getDiscount(product?.price + Op,product?.price)} %</span>
+        </div>
+        {product ? <p>{product?.discription}</p> : <span>Loading...</span>}
 
         <div>
           <button

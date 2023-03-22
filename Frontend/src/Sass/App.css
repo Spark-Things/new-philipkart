@@ -239,11 +239,30 @@ a {
   font-weight: 500;
   line-height: 4rem;
 }
-.productdetailconatiner .productdiscConatiner h1 {
+.productdetailconatiner .productdiscConatiner .prices {
+  display: flex;
+  align-items: baseline;
+  padding: 20px 0;
+  width: 50%;
+}
+.productdetailconatiner .productdiscConatiner .prices h1 {
   font-size: 3rem;
   line-height: 4rem;
   font-weight: 550;
-  margin: 2rem 0;
+}
+.productdetailconatiner .productdiscConatiner .prices span {
+  color: grey;
+  text-decoration: line-through;
+  font-size: 1.6rem;
+  margin: 0 0.5rem;
+}
+.productdetailconatiner .productdiscConatiner .prices .discount {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  background-color: red;
+  padding: 2px 10px;
+  border-radius: 25px;
 }
 .productdetailconatiner .productdiscConatiner em {
   font-size: 1.4rem;
@@ -363,8 +382,6 @@ a {
 }
 .Cartscreen .checkoutContainer a button {
   padding: 10px 15px;
-  letter-spacing: 2px;
-  text-transform: capitalize;
 }
 .Cartscreen button {
   cursor: pointer;
@@ -499,4 +516,69 @@ a {
 .LoginpageScreen div span a {
   color: rgb(46, 43, 226);
   text-decoration: underline;
+}
+
+.profilecontainer {
+  width: 100%;
+  height: 100vh;
+  padding: 2.5rem 10%;
+  display: flex;
+  flex-direction: column;
+}
+.profilecontainer .header {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  padding-left: 20px;
+}
+.profilecontainer .header .User {
+  font-size: 22px;
+  letter-spacing: -1px;
+}
+.profilecontainer .header .User span {
+  text-transform: capitalize !important;
+  font-size: 36px;
+}
+.profilecontainer .header button {
+  cursor: pointer;
+  color: white;
+  padding: 2% 10%;
+  background-color: rgb(46, 43, 226);
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 550;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 5rem;
+  padding: 10px 5%;
+  margin: 0;
+}
+.profilecontainer .OrderContainer {
+  width: 100%;
+  height: 60vh;
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+.profilecontainer .OrderContainer span {
+  width: 100%;
+  font-size: 24px;
+  padding: 0px 10px;
+  border-bottom: 1px #cacaca solid;
+}
+.profilecontainer .OrderContainer div {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  font-size: 1.8rem;
 }/*# sourceMappingURL=App.css.map */

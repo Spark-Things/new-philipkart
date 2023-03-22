@@ -19,7 +19,12 @@ const userschema = new mongoose.Schema({
   }
   ],
   wishlist:[{
-    type:Object
+    type:Object,
+    ref:"Post"
+  }],
+  orders:[{
+    type:Object,
+    ref:"Post"
   }]
 })
 

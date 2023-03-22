@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Navigate } from 'react-router-dom'
 
 function Profile() {
   const [User, setUser] = useState();
@@ -22,16 +23,23 @@ function Profile() {
   const onLogout = () => {
     localStorage.removeItem("User");
     localStorage.removeItem("jwt");
+    Navigate('/signin');
   };
 
   console.log(User);
 
   return (
-    <div className="profilrcontainer">
-        <span className="">Hello ,{User?.name}</span>
-      <br />
-
-      <button onClick={onLogout}>Logout</button>
+    <div className="profilecontainer">
+         <div className="header">
+           <span className="User">Hello,<span>{User?.name}</span></span>
+           <button onClick={onLogout}>Logout</button>
+         </div>
+        <div className="OrderContainer">
+            <span>Your Orders</span>
+            <div className="">
+                 You have No Order Previously
+            </div>
+        </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Wishlist() {
   const [list, setlist] = useState([]);
-  var total = 0;
+  var TotalAmount = 0;
 
   useEffect(() => {
     fetch("http://localhost:5000/getWishlist", {
@@ -37,42 +37,39 @@ function Wishlist() {
   }
 
   return (
-    <div  className="Cartscreen">
-      <div>
-        {list.length > 0 ? (
-          (
-            list.map((product, index) => {
-                 total = total + product?.price
-              return (
-                <div className="pList" key={index}>
-                  <div>
-                    <img src={product.photo} /> 
-                    <Link to={`/products/${product._id}`}>
-                      <div className="ttc">
-                        <span>{product?.title}</span>
-                        <p>{product?.discription}</p>
-                      </div>
-                    </Link>
+    <div className="Cartscreen">
+    <div className="listContainer">
+      {list.length > 0 ? (
+        list.map((product, index) => {
+          TotalAmount += product?.price;
+          return (
+            <div className="pList" key={index}>
+              <div>
+                <img src={product.photo} /> 
+                <Link to={`/products/${product._id}`}>
+                  <div className="ttc">
+                    <span>{product?.title}</span>
+                    <p>{product?.discription}</p>
                   </div>
-                  <span>₹{product?.price}</span>
-                  <button onClick={() => removeFromcart(product?._id)}>
-                    Remove
-                  </button>
-                </div>
-              );
-            })
-          ) 
-        ) : (
-          <a>Your wishlist Is empty</a>
-        )}
-      </div>
-      <div>
-      <span>{total}</span><br/>
-      <Link to={"/checkout"}>
-        <button>CheckOut</button>
-      </Link>
-      </div>
+                </Link>
+              </div>
+              <span>₹{product?.price}</span>
+              <button onClick={() => removeFromcart(product?._id)}>  Remove
+              </button>
+            </div>
+          );
+        })
+      ) : (
+        <a>Your cart Is empty</a>
+      )}
     </div>
+    <div className="checkoutContainer">
+       <span className="totalAmount">₹ {TotalAmount}</span>
+         <Link to={"/checkout"}>
+           <button>Buy Now</button>
+        </Link>
+    </div>
+  </div>
   );
 }
 
