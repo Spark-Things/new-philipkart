@@ -17,6 +17,48 @@ a {
   text-decoration: none;
 }
 
+.maincontainer {
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  background-color: #FBFAFB;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 100%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  width: 10px;
+  background: rgba(51, 51, 51, 0.545);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 104, 9, 0.657);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.PCardconatiner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+.PCardconatiner a {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
 .navbar {
   width: 100%;
   display: flex;
@@ -102,35 +144,6 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.maincontainer {
-  height: -moz-max-content;
-  height: max-content;
-  width: 100%;
-  background-color: #FBFAFB;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 100%;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  width: 10px;
-  background: rgba(51, 51, 51, 0.545);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 104, 9, 0.657);
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 .container {
@@ -283,20 +296,17 @@ a {
   font-size: 1.4rem;
   font-weight: 550;
   text-transform: capitalize;
-  background-color: rgb(22, 232, 255);
+  background-color: rgb(255, 183, 76);
 }
-
-.PCardconatiner {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+.productdetailconatiner .productdiscConatiner .quentityBtn {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  padding: 2px 15px;
+  border-radius: 2px;
+  background-color: #525252;
 }
-.PCardconatiner a {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+.productdetailconatiner .productdiscConatiner div span {
+  font-size: 1.6rem;
 }
 
 .FilterList {
@@ -308,10 +318,10 @@ a {
 .Cartscreen {
   display: flex;
   flex-direction: row;
-  padding: 10px 13%;
+  padding: 10px 10%;
 }
 .Cartscreen .listContainer {
-  width: 60%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   height: -moz-max-content;
@@ -581,4 +591,134 @@ a {
   align-items: center;
   padding: 20px 0px;
   font-size: 1.8rem;
+}
+
+.Lcontainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  height: 35vh;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px #cacaca solid;
+}
+.Lcontainer .imgConatiner {
+  width: 25rem;
+  height: 100%;
+}
+.Lcontainer .imgConatiner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Lcontainer .ppdetailcontainer {
+  padding: 2rem;
+  width: 50rem;
+  height: 100%;
+}
+.Lcontainer .ppdetailcontainer h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+.Lcontainer .ppdetailcontainer p {
+  line-height: 3rem;
+  font-size: 1.4rem;
+}
+.Lcontainer .detailcontainer {
+  width: 36rem;
+  padding: 2rem;
+  line-height: 2.5rem;
+}
+.Lcontainer h2 {
+  font-size: 2.4rem;
+}
+.Lcontainer h2:hover {
+  color: rgb(30, 116, 255);
+}
+.Lcontainer span {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: #525252;
+}
+.Lcontainer h4 {
+  color: rgb(30, 116, 255);
+  font-size: 1.2rem;
+}
+.Lcontainer h5 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 450;
+}
+
+.cardLayout {
+  width: 20rem;
+  height: 35vh;
+  padding: 1rem;
+  background-color: #63A6D7;
+  margin: 0 0.5rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+.cardLayout div {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+}
+.cardLayout div h5 {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  letter-spacing: 0.7px;
+  color: #FBFAFB;
+}
+.cardLayout div span {
+  font-size: 1rem;
+  font-weight: 550;
+  color: #FBFAFB;
+}
+
+.imageconatiner {
+  width: 100%;
+  height: 15rem;
+}
+.imageconatiner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.detailcontainer {
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+  justify-content: space-between;
+}
+.detailcontainer p {
+  font-size: 10px;
+  max-height: 40px;
+  color: #dcdcdc;
+}
+.detailcontainer button {
+  color: #FBFAFB;
+  width: -moz-max-content;
+  width: max-content;
+  border: 0;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: #212CAE;
+}
+.detailcontainer div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.detailcontainer div span {
+  font-size: large;
 }/*# sourceMappingURL=App.css.map */

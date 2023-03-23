@@ -53,6 +53,7 @@ function Wishlist() {
                   </div>
                 </Link>
               </div>
+              <span>1</span>
               <span>₹{product?.price}</span>
               <button onClick={() => removeFromcart(product?._id)}>  Remove
               </button>

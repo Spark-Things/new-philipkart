@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 function Productdetail() {
   const { id } = useParams();
   const [product, setproduct] = useState();
+  const [Quantity, setQuantity] = useState(1);
+
+  if(Quantity < 1){
+    setQuantity(1);
+  }
 
   var Op =  Math.floor(Math.random()*10000);
 
@@ -68,11 +73,15 @@ function Productdetail() {
         <em>Special price</em>
         <div className="prices">
         {product ? <h1>₹{product?.price}</h1> : <span>Loading...</span>}
-          <span>Rs. {product?.price + Op}</span> 
-          <span className="discount">SAVE {getDiscount(product?.price + Op,product?.price)} %</span>
+          <span>Rs. {product?.price + 5500}</span> 
+          <span className="discount">SAVE {getDiscount(product?.price + 5500,product?.price)} %</span>
         </div>
         {product ? <p>{product?.discription}</p> : <span>Loading...</span>}
-
+         <div>
+              <button onClick={() => setQuantity(Quantity -1)} className="quentityBtn"> - </button>
+                <span>{ Quantity }</span>
+             <button  onClick={() => setQuantity(Quantity + 1)} className="quentityBtn"> + </button>
+         </div>
         <div>
           <button
             onClick={() => addtoCart(product._id)}
@@ -82,7 +91,7 @@ function Productdetail() {
           </button>
           <button
             onClick={() => addtoWishlist(product._id)}
-            style={{ backgroundColor: " rgb(22, 232, 255)" }}
+            style={{ backgroundColor: "rgb(255, 183, 76)" }}
           >
             Add to wishlist
           </button>

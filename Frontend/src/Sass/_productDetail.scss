@@ -70,7 +70,18 @@
       font-size: 1.4rem;
       font-weight: 550;
       text-transform: capitalize;
-      background-color: rgb(22, 232, 255);
+      background-color: rgb(255, 183, 76);
+    }
+    .quentityBtn{
+      min-width: max-content;
+      padding: 2px 15px;
+      border-radius: 2px;
+      background-color: #525252;
+    }
+    div{
+      span{
+        font-size: 1.6rem;
+      }
     }
   }
 }

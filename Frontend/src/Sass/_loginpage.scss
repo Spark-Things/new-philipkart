@@ -1,0 +1,31 @@
+.LoginpageScreen {
+  @include commonScreen();
+  height: 82.95vh;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      @include inputConainer();
+
+      label {
+        @include labels();
+      }
+      input {
+        @include inputs();
+      }
+    }
+    button {
+      @include cmnBTN();
+      padding: 1% 5%;
+    }
+    span {
+      a {
+        color: rgb(46, 43, 226);
+        text-decoration: underline;
+      }
+      margin-top: 2rem;
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.addProductScreen {
+  @include commonScreen();
+  div {
+    @include inputConainer();
+
+    label {
+      @include labels();
+    }
+    input,
+    select {
+      @include inputs();
+    }
+  }
+  button {
+    @include cmnBTN();
+    padding: 1% 5%;
+  }
+}

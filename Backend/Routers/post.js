@@ -135,10 +135,10 @@ router.delete("/deleteItem/:id", requireLogin, (req, res) => {
       return res.json(err);
     }
     if (user?.cart) {
-      user.cart.map((product) => {
+      user?.cart?.map((product) => {
         if (product._id == productId) {
-          user.cart.remove(product);
-          user.save();
+           user.cart.remove(product);
+           user.save();
           return res.json(user.cart);
         }
       });

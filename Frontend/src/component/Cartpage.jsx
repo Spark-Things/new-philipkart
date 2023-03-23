@@ -44,7 +44,7 @@ function Cartpage() {
             return (
               <div className="pList" key={index}>
                 <div>
-                  <img src={product.photo} /> 
+                  <img src={product.photo} />
                   <Link to={`/products/${product._id}`}>
                     <div className="ttc">
                       <span>{product?.title}</span>
@@ -52,8 +52,11 @@ function Cartpage() {
                     </div>
                   </Link>
                 </div>
+                <span>1</span>
                 <span>₹{product?.price}</span>
-                <button onClick={() => removeFromcart(product?._id)}>  Remove
+                <button onClick={() => removeFromcart(product?._id)}>
+                  {" "}
+                  Remove
                 </button>
               </div>
             );
@@ -63,10 +66,10 @@ function Cartpage() {
         )}
       </div>
       <div className="checkoutContainer">
-         <span className="totalAmount">₹ {TotalAmount}</span>
-           <Link to={"/checkout"}>
-             <button>CheckOut</button>
-          </Link>
+        <span className="totalAmount">₹ {TotalAmount}</span>
+        <Link to={"/checkout"}>
+          <button>CheckOut</button>
+        </Link>
       </div>
     </div>
   );
