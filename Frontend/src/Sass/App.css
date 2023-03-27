@@ -73,7 +73,7 @@ a {
   font-size: 3rem;
   letter-spacing: 2px;
 }
-.navbar div {
+.navbar .rn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -81,16 +81,18 @@ a {
   width: -moz-max-content;
   width: max-content;
 }
-.navbar div span {
+.navbar .rn span {
   font-size: 18px;
   color: rgb(255, 255, 255);
   padding: 0.5rem 2rem;
 }
-.navbar div span:hover {
+.navbar .rn span:hover {
   background-color: rgba(142, 142, 142, 0.4705882353);
   border-radius: 5px;
 }
 .navbar .SeachbarContainer {
+  display: flex;
+  flex-direction: column;
   width: 30%;
 }
 .navbar .Seachbar {
@@ -721,4 +723,21 @@ a {
 }
 .detailcontainer div span {
   font-size: large;
+}
+
+.searchContainer {
+  position: absolute;
+  z-index: 100;
+  width: 30%;
+  height: -moz-max-content;
+  height: max-content;
+  top: 60px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+}
+.searchContainer .serachBody {
+  width: 100%;
+  background-color: rgb(32, 255, 203);
+  height: 40vh;
 }/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,15 @@
+.searchContainer{
+  position: absolute;
+  z-index: 100;
+  width: 30%;
+  height: max-content;
+  top: 60px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+   .serachBody{
+      width: 100%;
+      background-color: rgb(32, 255, 203);
+       height: 40vh;
+   }
+}

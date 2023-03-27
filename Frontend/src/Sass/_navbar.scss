@@ -12,7 +12,7 @@
     font-size: 3rem;
     letter-spacing: 2px;
   }
-  div {
+  .rn{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,7 +29,10 @@
     }
   }
   .SeachbarContainer {
+    display: flex;
+    flex-direction: column;
     width: 30%;
+
   }
   .Seachbar {
     width: 100%;

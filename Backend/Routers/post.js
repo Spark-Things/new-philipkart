@@ -177,4 +177,13 @@ router.get("/getWishlist", requireLogin, (req, res) => {
     .catch((err) => res.json(err));
 });
 
+
+
+router.post("/search-result",(req,res) => {
+  let searchPattern = new RegExp("^" + req.body.query)
+  Post.find({title:{$regex:searchPattern}})
+  .then(item => res.json({item}))
+  .catch(error => res.json({err : error}))
+})
+
 module.exports = router;

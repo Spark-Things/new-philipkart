@@ -1,5 +1,6 @@
 {
   "editor.cursorSurroundingLines": 0,
   "workbench.editor.titleScrollbarSizing": "default",
-  "workbench.editor.scrollToSwitchTabs": false
+  "workbench.editor.scrollToSwitchTabs": false,
+  "workbench.colorTheme": "Default Dark+"
 }
