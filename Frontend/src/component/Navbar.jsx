@@ -24,7 +24,6 @@ function Navbar() {
      console.log(result.item);
     })
     .catch(err => console.log(err))
-
    }
 
   return (
@@ -34,9 +33,9 @@ function Navbar() {
           <span className="logo">Philipkart</span>
         </Link>
            <div className="SeachbarContainer">
-              <input className="Seachbar" type="search" name="" id="" placeholder="Search" 
+              <input className="Seachbar" type="search" name="" id="" placeholder="Search here" 
               onChange={(e) => fetchSearch(e.target.value) }/>
-              <Searchcontent searchData={searchResult} />
+               {search ? <Searchcontent searchData={searchResult} /> : null}
            </div>
         <div className="rn">
           <Link to="/cart">

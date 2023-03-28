@@ -93,7 +93,7 @@ a {
 .navbar .SeachbarContainer {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 31%;
 }
 .navbar .Seachbar {
   width: 100%;
@@ -731,13 +731,44 @@ a {
   width: 30%;
   height: -moz-max-content;
   height: max-content;
-  top: 60px;
-  background-color: aquamarine;
+  top: 6.1rem;
+  background-color: rgb(241, 241, 241);
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  box-shadow: 1px 7px 10px 1px rgba(0, 0, 0, 0.203);
 }
 .searchContainer .serachBody {
   width: 100%;
-  background-color: rgb(32, 255, 203);
-  height: 40vh;
+  max-height: 40vh;
+  height: -moz-max-content;
+  height: max-content;
+}
+.searchContainer .searchCard {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.searchContainer .searchCard img {
+  width: 5.5rem;
+  height: 5.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  aspect-ratio: 3/2;
+}
+.searchContainer .searchCard div {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.searchContainer .searchCard div span {
+  color: #212CAE;
+  font-size: 1.2rem;
+}
+.searchContainer .searchCard div h4 {
+  font-size: 1.2rem;
+}
+.searchContainer .icon {
+  font-size: 18px;
+  content: "\f08e";
 }/*# sourceMappingURL=App.css.map */
