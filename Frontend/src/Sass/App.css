@@ -768,6 +768,9 @@ a {
 .searchContainer .searchCard div h4 {
   font-size: 1.2rem;
 }
+.searchContainer .searchCard:hover {
+  background-color: #c0c0c0;
+}
 .searchContainer .icon {
   font-size: 18px;
   content: "\f08e";
