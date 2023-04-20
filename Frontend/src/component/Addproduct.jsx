@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // import {cloud_name,api_key,api_secret} from '../../../Backend/Keys'
 
 function Addproduct() {
@@ -11,7 +12,7 @@ function Addproduct() {
   const [ImgUrl, setImgUrl] = useState();
 
   // console.log(import.meta.env.VITE_CLOUD_NAME);
-
+  const navigate = useNavigate();
   const addProductToDb = () => {
     console.log(ImgUrl);
     console.log(category);
@@ -33,6 +34,7 @@ function Addproduct() {
       .then((res) => res.json())
       .then((result) => console.log(result))
   : console.log("Image Url Not Found");
+  navigate("/")
   }  
   const addImage = async () => {
     if (image) {

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Profile() {
   const [User, setUser] = useState();
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("http://localhost:5000/myprofile", {
       method: "get",
@@ -23,7 +24,7 @@ function Profile() {
   const onLogout = () => {
     localStorage.removeItem("User");
     localStorage.removeItem("jwt");
-    Navigate('/signin');
+    navigate('/');
   };
 
   console.log(User);

@@ -30,6 +30,11 @@ const Postschema = new mongoose.Schema({
     Brand:{
       type:String,
       required: true,
+    },
+    Quantity:{
+      type:Number,
+      require:true,
+      default: 1
     }
 
 })

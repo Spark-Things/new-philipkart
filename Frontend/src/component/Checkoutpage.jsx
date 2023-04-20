@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 
-function Checkoutpage() {
+function Checkoutpage({TotalAmount}) {
+
+    const [clientSec, setclientSec] = useState("");
+
   return (
-    <div>Checkoutpage</div>
+    <div>Checkoutpage {TotalAmount}</div>
   )
 }
 

@@ -6,6 +6,9 @@ const bcrypt = require("bcryptjs");
 const { JWT_SECRET } = require("../Keys");
 const jwt = require("jsonwebtoken");
 const requireLogin = require("../middleware/RequireLogin");
+const {v4} = require('uuid');
+const stripe = require('stripe')("sk_test_51KwjDaSEPDWRfwRTNP0dRnmZZ0nj2sclaIwtF4KEr58wfHyedg9bAc1f0BFEbjGlgM6hvZJyfCSnziHa7QoX0Ipr00ir9sEeSj");
+
 
 router.get("/checkout", requireLogin, (req, res) => {
   res.json({ msg: "tum to bade paise vale ho" });
@@ -97,5 +100,41 @@ router.get("/myprofile", requireLogin, (req, res) => {
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
+
+router.post("/payment",requireLogin,(req,res) => {
+  const user = req.user;
+  const {paymentInfo} = req.body;
+  console.log(paymentInfo.id);
+  if(!user){
+     return res.status(301).json({error : "you must have logged in"});
+  }
+  User.findOne({_id : user._id}).populate("cart")
+  .then((result) => {
+    let price = 0
+    result.cart.forEach(item => {
+       price = price + item.Quantity*item.price
+    })
+
+    const prevCustomer = stripe.customers.list({email:paymentInfo.email})
+    const isExitingCustomer = prevCustomer?.data?.length > 0;
+     let newCustomer
+    if(!isExitingCustomer){
+        let email = paymentInfo?.email
+        let source = paymentInfo?.id
+       newCustomer = stripe.customers.create({email, source})
+    }
+     
+    const charge = stripe.charges.create({
+      currency:"INR",
+      amount: price*100,
+      receipt_email: paymentInfo?.email,
+      customer: isExitingCustomer? prevCustomer?.data[0]?.id : newCustomer?.id,
+      discription: "payment done"
+    },{
+      idemtotencykey:v4()
+    })
+    res.status(200).json({msg:"Payment is successful"})
+  })
+})
 
 module.exports = router;

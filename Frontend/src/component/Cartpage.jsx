@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Checkoutpage from "./Checkoutpage";
+import StripeCheckout from "react-stripe-checkout";
 
 function Cartpage() {
-  const [items, setitems] = useState([]);
+  const [items, setitems] = useState();
+  const [Checkout, setCheckout] = useState(false);
   var TotalAmount = 0;
 
   useEffect(() => {
@@ -16,7 +19,6 @@ function Cartpage() {
       .then((res) => res.json())
       .then((result) => {
         setitems(result.cart);
-        console.log(result);
       });
   }, []);
 
@@ -30,15 +32,32 @@ function Cartpage() {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         setitems(result);
+      });
+  };
+
+  const handleCheckout = (paymentInfo) => {
+    console.log(paymentInfo);
+    fetch("http://localhost:5000/payment", {
+      method: "POST",
+      headers: {
+        authorization: "Bearer " + localStorage.getItem("jwt"),
+        "Content-type": "Application/json",
+      },
+      body: JSON.stringify({
+        paymentInfo,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
       });
   };
 
   return (
     <div className="Cartscreen">
       <div className="listContainer">
-        {items.length > 0 ? (
+        {items ? (
           items.map((product, index) => {
             TotalAmount += product?.price;
             return (
@@ -67,9 +86,19 @@ function Cartpage() {
       </div>
       <div className="checkoutContainer">
         <span className="totalAmount">₹ {TotalAmount}</span>
-        <Link to={"/checkout"}>
-          <button>CheckOut</button>
-        </Link>
+        <StripeCheckout
+          name="my_store"
+          amount={TotalAmount * 100}
+          image={items ? items[0]?.photo : null}
+          currency="INR"
+          shippingAddress={true}
+          billingAddress={true}
+          zipCode={true}
+          stripeKey="pk_test_51KwjDaSEPDWRfwRTTQbKmjZBYnK1nYwuCeX98OY8msPZ6vTkaGRYlZQAKoJPHOTWJyzeSRMsPij0cH4xQk7K59vg00VOY0HoXK"
+          token={(payInfo) => handleCheckout(payInfo)}
+        >
+          <button onClick={() => setCheckout(true)}>CheckOut</button>
+        </StripeCheckout>
       </div>
     </div>
   );

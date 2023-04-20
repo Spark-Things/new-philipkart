@@ -135,13 +135,12 @@ router.delete("/deleteItem/:id", requireLogin, (req, res) => {
       return res.json(err);
     }
     if (user?.cart) {
-      user?.cart?.map((product) => {
-        if (product._id == productId) {
-           user.cart.remove(product);
-           user.save();
-          return res.json(user.cart);
-        }
-      });
+      const fI = user?.cart?.filter((item) =>item._id == productId)
+      user.cart.remove(fI[0]);
+      user.save();
+      return res.json(user.cart)
+    }else{
+      console.log("cart not found");
     }
   });
 });
@@ -153,13 +152,12 @@ router.delete("/deleteItemfromWishlist/:id", requireLogin, (req, res) => {
       return res.json(err);
     }
     if (user?.wishlist) {
-      user?.wishlist.map((product) => {
-        if (product._id == productId) {
-          user.wishlist.remove(product);
-          user.save();
-          return res.json(user.wishlist);
-        }
-      });
+      const fI = user?.wishlist?.filter((item) =>item._id == productId)
+      user.wishlist.remove(fI[0]);
+      user.save();
+      return res.json(user.wishlist)
+    }else{
+      console.log("cart not found");
     }
   });
 });

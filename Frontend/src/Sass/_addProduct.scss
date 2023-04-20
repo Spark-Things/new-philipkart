@@ -1,5 +1,6 @@
 .addProductScreen {
   @include commonScreen();
+  background-color: transparent;
   div {
     @include inputConainer();
 
