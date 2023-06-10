@@ -39,13 +39,11 @@ app.listen(port, () => {
   console.log("Yehhh Connected To Server");
 });
 
-console.log(MONGOURI);
-
-if(process.env.NODE_ENV=="production"){
-  app.use(express.static('Frontend/dist'))
+if(process.env.NODE_ENV == "production"){
+  app.use(express.static('Frontend/build'))
   const path=require('path')
-  app.get("/",(req,res)=>{
-      res.sendFile(path.resolve(__dirname,'Frontend','dist','index.html'))
+  app.get("*",(req,res)=>{
+      res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
       //if client will send req to any folder then we send index.html
 
   })
