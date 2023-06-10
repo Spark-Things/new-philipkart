@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Panelcontainer from "../widget/panelcontainer";
+import Panelcontainer from "../widget/Panelcontainer";
 import one from "../Images/1.jpg";
 import two from "../Images/2.jpg";
 import three from "../Images/3.jpg";

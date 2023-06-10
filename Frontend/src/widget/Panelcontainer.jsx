@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Productcard from "../widget/Productcard";
+import Productcard from "./Productcard";
 import { Link } from "react-router-dom";
 
 function Panelcontainer({ category }) {
