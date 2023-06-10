@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 const  { MONGOURI }  = require('./config/Keys');
 
-const port = 5000;
+const port = 5000 || process.env.PORT;
 
 mongoose.set("strictQuery", true);
 

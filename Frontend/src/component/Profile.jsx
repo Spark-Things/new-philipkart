@@ -5,7 +5,7 @@ function Profile() {
   const [User, setUser] = useState();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("https://new-philipkart.vercel.app/myprofile", {
+    fetch("process.env.backendURLmyprofile", {
       method: "get",
       headers: {
         "Content-Type": "application/json",

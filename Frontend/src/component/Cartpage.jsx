@@ -10,7 +10,7 @@ function Cartpage() {
   var TotalAmount = 0;
 
   useEffect(() => {
-    fetch("https://new-philipkart.vercel.app/getcartItems", {
+    fetch("process.env.backendURLgetcartItems", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ function Cartpage() {
   }, []);
 
   const removeFromcart = (id) => {
-    fetch(`https://new-philipkart.vercel.app/deleteItem/${id}`, {
+    fetch(`process.env.backendURLdeleteItem/${id}`, {
       method: "delete",
       headers: {
         "Content-Type": "application/json ",
@@ -39,7 +39,7 @@ function Cartpage() {
 
   const handleCheckout = (paymentInfo) => {
     console.log(paymentInfo);
-    fetch("https://new-philipkart.vercel.app/payment", {
+    fetch("process.env.backendURLpayment", {
       method: "POST",
       headers: {
         authorization: "Bearer " + localStorage.getItem("jwt"),

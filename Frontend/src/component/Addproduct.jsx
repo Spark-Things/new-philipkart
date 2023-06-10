@@ -16,7 +16,7 @@ function Addproduct() {
   const addProductToDb = () => {
     console.log(ImgUrl);
     console.log(category);
-    ImgUrl ? fetch("https://new-philipkart.vercel.app/addproduct", {
+    ImgUrl ? fetch("process.env.backendURLaddproduct", {
       method: "POST",
       headers: {
         authorization: "Bearer " + localStorage.getItem("jwt"),

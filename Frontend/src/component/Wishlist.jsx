@@ -6,7 +6,7 @@ function Wishlist() {
   var TotalAmount = 0;
 
   useEffect(() => {
-    fetch("https://new-philipkart.vercel.app/getWishlist", {
+    fetch("process.env.backendURLgetWishlist", {
       method: "get",
       headers: {
         "Content-type": "application/json",
@@ -22,7 +22,7 @@ function Wishlist() {
   }, []);
 
   const removeFromWishlist = (id) => {
-    fetch(`https://new-philipkart.vercel.app/deleteItemfromWishlist/${id}`,{
+    fetch(`process.env.backendURLdeleteItemfromWishlist/${id}`,{
       method:"delete",
       headers: {
         "Content-Type": "application/json ",

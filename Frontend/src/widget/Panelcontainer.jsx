@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Panelcontainer({ category }) {
   const [Data, setData] = useState();
   useEffect(() => {
-    fetch(`https://new-philipkart.vercel.app/product/${category}`, {
+    fetch(`process.env.backendURLproduct/${category}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
