@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const mongoose = require("mongoose");
 
-const { MONGOURI } = require("./Keys");
+const { MONGOURI } = process.env.MONGOURI;
 
 const port = 5000;
 
