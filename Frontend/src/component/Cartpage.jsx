@@ -6,6 +6,7 @@ import StripeCheckout from "react-stripe-checkout";
 function Cartpage() {
   const [items, setitems] = useState();
   const [Checkout, setCheckout] = useState(false);
+  let  productprice = 0;
   var TotalAmount = 0;
 
   useEffect(() => {
@@ -59,7 +60,8 @@ function Cartpage() {
       <div className="listContainer">
         {items ? (
           items.map((product, index) => {
-            TotalAmount += product?.price;
+            productprice = product?.price*product?.Quantity;
+            TotalAmount += productprice;
             return (
               <div className="pList" key={index}>
                 <div>
@@ -71,7 +73,7 @@ function Cartpage() {
                     </div>
                   </Link>
                 </div>
-                <span>1</span>
+                <span>{product?.Quantity}</span>
                 <span>₹{product?.price}</span>
                 <button onClick={() => removeFromcart(product?._id)}>
                   {" "}

@@ -21,7 +21,7 @@ function Wishlist() {
       .catch((err) => console.log(err));
   }, []);
 
-  const removeFromcart = (id) => {
+  const removeFromWishlist = (id) => {
     fetch(`http://localhost:5000/deleteItemfromWishlist/${id}`,{
       method:"delete",
       headers: {
@@ -45,8 +45,8 @@ function Wishlist() {
           return (
             <div className="pList" key={index}>
               <div>
-                <img src={product.photo} /> 
-                <Link to={`/products/${product._id}`}>
+                <img src={product?.photo} /> 
+                <Link to={`/products/${product?._id}`}>
                   <div className="ttc">
                     <span>{product?.title}</span>
                     <p>{product?.discription}</p>
@@ -55,7 +55,7 @@ function Wishlist() {
               </div>
               <span>1</span>
               <span>₹{product?.price}</span>
-              <button onClick={() => removeFromcart(product?._id)}>  Remove
+              <button onClick={() => removeFromWishlist(product?._id)}>  Remove
               </button>
             </div>
           );

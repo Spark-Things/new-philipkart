@@ -1,5 +1,24 @@
 .FilterList {
   min-width: 20%;
   height: 100vh;
-  background-color: aqua;
+  background-color: white;
+  padding: 1.5rem;  
+  div{
+    // background-color: white;
+    span{
+      font-size: 1.4rem;
+      color: darken(white,80);
+    }
+    ul{
+      li{
+        line-height: 3rem;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.2rem;
+        input{
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
 }

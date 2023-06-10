@@ -23,7 +23,14 @@ function Listproduct() {
     <div className="maincontainer">
       <div style={{ display: "flex", width: "100%" }}>
         <div className="FilterList">
-          <span>Sort</span>
+          <div className="">
+              <span>Sort By Price</span>
+              <ul>
+                 <li><input type="radio" name="price"/>Price Low to High</li>
+                 <li><input type="radio" name="price"/>Price High to Low</li>
+                 <li><input type="radio" name="price"/>Less than 5000</li>
+              </ul>
+          </div>
         </div>
         <div>
           {" "}

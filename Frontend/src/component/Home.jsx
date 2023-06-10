@@ -6,14 +6,7 @@ import three from "../Images/3.jpg";
 
 function Home() {
   const [Disp, setDisp] = useState(1);
-  
-  //  setInterval(() => {
-  //    if(Disp < 1){
-  //       return setDisp(1);
-  //    }
-  //   Disp > 0 ?
-  //   //  setDisp(Disp <= 3 && Disp > 1 ? Disp - 1 : 3) :null
-  //  },3000)
+
 
   return (
     <div className="maincontainer">

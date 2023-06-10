@@ -15,7 +15,7 @@ function Panelcontainer({ category }) {
       .then((result) => {
         setData(result);
       });
-  }, []);
+  }, [Data]);
   return (
     <div className="container">
       <div className="panel1">

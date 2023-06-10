@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 import { Link } from 'react-router-dom';
 
 function CategoryTab() {
-  var cat = ["Shoes","Mobile","TV","Electronic","Other"];
+  var cat = ["Shoes","Mobile","TV","Electronic"];
   return (
     <div className="catagorycontainer">
     {

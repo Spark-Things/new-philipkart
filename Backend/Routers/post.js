@@ -73,9 +73,7 @@ router.get("/products/:id", (req, res) => {
 
 router.post("/addtocart/:id", requireLogin, (req, res) => {
   Post.findById({ _id: req.params.id }).then((result) => {
-    // res.json(result);
-
-    // User.findById({_id :req.user._id}).then(result => res.json(result))
+    result.Quantity = req.body.Quantity,
     User.findByIdAndUpdate(
       { _id: req.user._id },
       {
@@ -85,7 +83,8 @@ router.post("/addtocart/:id", requireLogin, (req, res) => {
     )
       .select("email name _id cart wishlist")
       .exec((err, results) => {
-        if (result) {
+        if (results) {
+          results.save();
           return res.json(results);
         }
         if (err) console.log(err);
@@ -94,19 +93,21 @@ router.post("/addtocart/:id", requireLogin, (req, res) => {
 });
 
 router.post("/addtowishlist/:id", requireLogin, (req, res) => {
-  Post.find({ _id: req.params.id }).then((result) => {
+  Post.findOne({ _id: req.params.id }).then((result) => {
+    result.Quantity = req.body.Quantity,
     User.findByIdAndUpdate(
       { _id: req.user._id },
       {
-        $push: { wishlist: result[0] },
+        $push: { wishlist: result},
       },
       { new: true }
     )
       .select("email name _id cart wishlist")
-      .exec((err, result) => {
+      .exec((err, results) => {
         if (err) return res.json(err);
         else {
-          res.json(result);
+          results.save();
+          return res.json(results); 
         }
       });
   });
