@@ -17,7 +17,7 @@ function Signuppage() {
      const email = document.getElementById("email").value;
      const cnfpassword = document.getElementById("cnfpassword").value;
 
-    fetch("http://localhost:5000/signup",{
+    fetch("https://new-philipkart.vercel.app/signup",{
       method:"POST",
       headers:{
         "Content-type":"application/json"

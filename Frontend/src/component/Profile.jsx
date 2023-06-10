@@ -5,7 +5,7 @@ function Profile() {
   const [User, setUser] = useState();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/myprofile", {
+    fetch("https://new-philipkart.vercel.app/myprofile", {
       method: "get",
       headers: {
         "Content-Type": "application/json",

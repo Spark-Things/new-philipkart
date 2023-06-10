@@ -9,7 +9,7 @@ function Navbar() {
 
    const fetchSearch = (query) => {
     setsearch(query)
-    fetch('http://localhost:5000/search-result',{
+    fetch('https://new-philipkart.vercel.app/search-result',{
       method:"post",
       headers:{
         "Content-Type":"application/json"

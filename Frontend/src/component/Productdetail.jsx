@@ -19,7 +19,7 @@ function Productdetail() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://new-philipkart.vercel.app/products/${id}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function Productdetail() {
 
   const addtoCart = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/addtocart/${id}`, {
+    fetch(`https://new-philipkart.vercel.app/addtocart/${id}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -50,7 +50,7 @@ function Productdetail() {
   };
 
   const addtoWishlist = (id) => {
-    fetch(`http://localhost:5000/addtowishlist/${id}`, {
+    fetch(`https://new-philipkart.vercel.app/addtowishlist/${id}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

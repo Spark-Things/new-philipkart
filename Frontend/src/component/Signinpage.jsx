@@ -8,7 +8,7 @@ function Signinpage() {
   const navigate = useNavigate();
 
   const login = () => {
-    fetch("http://localhost:5000/signin", {
+    fetch("https://new-philipkart.vercel.app/signin", {
       method: "POST",
       body: JSON.stringify({
         email,

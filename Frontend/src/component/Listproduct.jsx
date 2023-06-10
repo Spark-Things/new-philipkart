@@ -6,7 +6,7 @@ function Listproduct() {
   const { category } = useParams();
   // console.log(category);
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${category}`, {
+    fetch(`https://new-philipkart.vercel.app/product/${category}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
