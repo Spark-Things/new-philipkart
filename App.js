@@ -42,7 +42,7 @@ app.listen(port, () => {
 if(process.env.NODE_ENV=="production"){
   app.use(express.static('Frontend/build'))
   const path=require('path')
-  app.get("*",(req,res)=>{
+  app.get("/",(req,res)=>{
       res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
       //if client will send req to any folder then we send index.html
 
