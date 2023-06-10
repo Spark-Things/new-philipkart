@@ -39,10 +39,12 @@ app.listen(port, () => {
   console.log("Yehhh Connected To Server");
 });
 
-if(process.env.NODE_ENV == 'production'){
-  const path = require('path');
-   app.get('/',(res,req) => {
-    app.use(express.static(path.resolve(__dirname,'Frontend','dist')));
-    res.sendFile(path.resolve(__dirname,'Frontend','dist','index.html'))
-   })
+if(process.env.NODE_ENV=="production"){
+  app.use(express.static('Frontend/build'))
+  const path=require('path')
+  app.get("*",(req,res)=>{
+      res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
+      //if client will send req to any folder then we send index.html
+
+  })
 }
