@@ -1,0 +1,63 @@
+@import "./common";
+@import "./variable";
+@import url("https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  color: $black;
+  font-family: "Saira", sans-serif;
+  text-transform: capitalize;
+}
+html {
+  font-size: 62.5%;
+}
+a {
+  text-decoration: none;
+}
+.maincontainer {
+  height: max-content;
+  width: 100%;
+  background-color: $white;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 100%;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  width: 10px;
+  background: rgba(51, 51, 51, 0.545);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 104, 9, 0.657);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.PCardconatiner {
+  @include row();
+  a {
+    @include row();
+  }
+}
+@import './navbar';
+@import './categoryContainer';
+@import './adConatiner';
+@import './mainpageRow';
+@import './productDetail';
+@import './sortcolumn';
+@import './cartscreen';
+@import './addProduct';
+@import './loginpage';  
+@import './profile';
+@import './Listpanel';
+@import './Productcard';
+@import './searchContent';

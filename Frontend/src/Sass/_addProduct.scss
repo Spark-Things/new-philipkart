@@ -1,0 +1,19 @@
+.addProductScreen {
+  @include commonScreen();
+  background-color: transparent;
+  div {
+    @include inputConainer();
+
+    label {
+      @include labels();
+    }
+    input,
+    select {
+      @include inputs();
+    }
+  }
+  button {
+    @include cmnBTN();
+    padding: 1% 5%;
+  }
+}

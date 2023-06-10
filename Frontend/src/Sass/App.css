@@ -1,0 +1,806 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  color: #252525;
+  font-family: "Saira", sans-serif;
+  text-transform: capitalize;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.maincontainer {
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  background-color: #FBFAFB;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 100%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  width: 10px;
+  background: rgba(51, 51, 51, 0.545);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 104, 9, 0.657);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.PCardconatiner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+.PCardconatiner a {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  background-color: #212CAE;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+}
+.navbar .logo {
+  font-family: "Syncopate", sans-serif;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.navbar .rn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.navbar .rn span {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 2rem;
+}
+.navbar .rn span:hover {
+  background-color: rgba(142, 142, 142, 0.4705882353);
+  border-radius: 5px;
+}
+.navbar .SeachbarContainer {
+  display: flex;
+  flex-direction: column;
+  width: 31%;
+}
+.navbar .Seachbar {
+  width: 100%;
+  background-color: rgba(202, 202, 202, 0.6431372549);
+  font-size: 16px;
+  color: #252525;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #cacaca;
+  margin-right: 2rem;
+}
+.navbar .Seachbar::-moz-placeholder {
+  color: white;
+}
+.navbar .Seachbar::placeholder {
+  color: white;
+}
+.navbar .Seachbar:focus {
+  outline: 0;
+  background-color: #cacaca;
+}
+.navbar .Seachbar:focus::-moz-placeholder {
+  color: #252525;
+}
+.navbar .Seachbar:focus::placeholder {
+  color: #252525;
+}
+
+.catagorycontainer {
+  font-size: 1.6rem;
+  background-color: #808291;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 6rem;
+}
+.catagorycontainer span {
+  color: white;
+}
+
+.Adcontainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  height: 40vh;
+}
+.Adcontainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px #cacaca solid;
+  scroll-behavior: smooth;
+}
+.container .productCardConatiner {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 27rem;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.container .productCardConatiner::-webkit-scrollbar {
+  padding: 20px;
+  width: 100%;
+  height: 10px;
+}
+.container .productCardConatiner::-webkit-scrollbar-track {
+  width: 100%;
+  background: transparent;
+}
+.container .productCardConatiner::-webkit-scrollbar-thumb {
+  max-width: 10%;
+  background: rgba(92, 92, 92, 0.579);
+  border-radius: 10px;
+}
+.container .productCardConatiner::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.container .panel1 {
+  min-width: 23rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.container .panel1 span {
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  color: #252525;
+}
+.container .panel1 a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .panel1 a button {
+  cursor: pointer;
+  color: white;
+  padding: 2% 10%;
+  background-color: rgb(46, 43, 226);
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 550;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 5rem;
+}
+
+.productdetailconatiner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: lightblue;
+  padding: 0 15rem;
+}
+.productdetailconatiner .productImageConatiner {
+  height: 60vh;
+  width: 85rem;
+  background-color: #FBFAFB;
+  padding: 2rem;
+}
+.productdetailconatiner .productImageConatiner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.productdetailconatiner .productdiscConatiner {
+  width: 100%;
+  height: 60vh;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  padding: 5rem;
+  background-color: #FBFAFB;
+  display: flex;
+  flex-direction: column;
+}
+.productdetailconatiner .productdiscConatiner .title {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 4rem;
+}
+.productdetailconatiner .productdiscConatiner .prices {
+  display: flex;
+  align-items: baseline;
+  padding: 20px 0;
+  width: 50%;
+}
+.productdetailconatiner .productdiscConatiner .prices h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 550;
+}
+.productdetailconatiner .productdiscConatiner .prices span {
+  color: grey;
+  text-decoration: line-through;
+  font-size: 1.6rem;
+  margin: 0 0.5rem;
+}
+.productdetailconatiner .productdiscConatiner .prices .discount {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  background-color: red;
+  padding: 2px 10px;
+  border-radius: 25px;
+}
+.productdetailconatiner .productdiscConatiner em {
+  font-size: 1.4rem;
+  color: rgb(30, 116, 255);
+}
+.productdetailconatiner .productdiscConatiner p {
+  color: #525252;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+.productdetailconatiner .productdiscConatiner button {
+  color: #FBFAFB;
+  padding: 1rem;
+  min-width: 30%;
+  margin: 1rem;
+  border-radius: 10px;
+  border: 0;
+  font-size: 1.4rem;
+  font-weight: 550;
+  text-transform: capitalize;
+  background-color: rgb(255, 183, 76);
+}
+.productdetailconatiner .productdiscConatiner .quentityBtn {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  padding: 2px 15px;
+  border-radius: 2px;
+  background-color: #525252;
+}
+.productdetailconatiner .productdiscConatiner div span {
+  font-size: 1.6rem;
+}
+
+.FilterList {
+  min-width: 20%;
+  height: 100vh;
+  background-color: white;
+  padding: 1.5rem;
+}
+.FilterList div span {
+  font-size: 1.4rem;
+  color: #333333;
+}
+.FilterList div ul li {
+  line-height: 3rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+}
+.FilterList div ul li input {
+  margin: 0 1rem;
+}
+
+.Cartscreen {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 10%;
+}
+.Cartscreen .listContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
+  align-items: center;
+}
+.Cartscreen .listContainer .pList {
+  height: -moz-max-content;
+  height: max-content;
+  min-width: 90%;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px #cacaca solid;
+  padding: 10px;
+  align-items: center;
+}
+.Cartscreen .listContainer .pList div {
+  display: flex;
+  flex-direction: row;
+}
+.Cartscreen .listContainer .pList div img {
+  height: 10vh;
+  width: 10vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Cartscreen .listContainer .pList div .ttc {
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+.Cartscreen .listContainer .pList div .ttc p {
+  max-width: 20rem;
+}
+.Cartscreen .listContainer .pList div .ttc span {
+  width: 100%;
+  padding: 0px;
+}
+.Cartscreen .listContainer .pList span {
+  min-width: 18%;
+  font-size: 18px;
+}
+.Cartscreen .listContainer .pList button {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 2% 3%;
+  background-color: rgb(205, 41, 41);
+  margin-top: 0px;
+}
+.Cartscreen .checkoutContainer {
+  background-color: rgb(229, 229, 229);
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+}
+.Cartscreen .checkoutContainer .totalAmount {
+  font-size: 24px;
+}
+.Cartscreen .checkoutContainer a button {
+  padding: 10px 15px;
+}
+.Cartscreen button {
+  cursor: pointer;
+  color: white;
+  padding: 2% 10%;
+  background-color: rgb(46, 43, 226);
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 550;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 5rem;
+}
+
+.addProductScreen {
+  width: 100%;
+  background-color: #202020;
+  height: -moz-max-content;
+  height: max-content;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 10%;
+  background-color: transparent;
+}
+.addProductScreen div {
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.addProductScreen div label {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+  min-width: 15rem;
+  align-items: center;
+  margin: auto;
+  color: rgb(37, 37, 37);
+}
+.addProductScreen div input,
+.addProductScreen div select {
+  padding: 12px;
+  min-width: 35rem;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 5px;
+  background-color: #cacaca;
+  color: #202020;
+  border: 1px #cacaca solid;
+  outline: 0;
+}
+.addProductScreen button {
+  cursor: pointer;
+  color: white;
+  padding: 2% 10%;
+  background-color: rgb(46, 43, 226);
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 550;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 5rem;
+  padding: 1% 5%;
+}
+
+.LoginpageScreen {
+  width: 100%;
+  background-color: #202020;
+  height: -moz-max-content;
+  height: max-content;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 10%;
+  height: 82.95vh;
+}
+.LoginpageScreen div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.LoginpageScreen div div {
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.LoginpageScreen div div label {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+  min-width: 15rem;
+  align-items: center;
+  margin: auto;
+  color: rgb(37, 37, 37);
+  color: white;
+}
+.LoginpageScreen div div input {
+  padding: 12px;
+  min-width: 35rem;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 5px;
+  background-color: #cacaca;
+  color: #202020;
+  border: 1px #cacaca solid;
+  outline: 0;
+}
+.LoginpageScreen div button {
+  cursor: pointer;
+  color: white;
+  padding: 2% 10%;
+  background-color: rgb(46, 43, 226);
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 550;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 5rem;
+  padding: 1% 5%;
+}
+.LoginpageScreen div span {
+  color: white;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}
+.LoginpageScreen div span a {
+  color: rgb(46, 43, 226);
+  text-decoration: underline;
+}
+
+.profilecontainer {
+  width: 100%;
+  height: 100vh;
+  padding: 2.5rem 10%;
+  display: flex;
+  flex-direction: column;
+}
+.profilecontainer .header {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  padding-left: 20px;
+}
+.profilecontainer .header .User {
+  font-size: 22px;
+  letter-spacing: -1px;
+}
+.profilecontainer .header .User span {
+  text-transform: capitalize !important;
+  font-size: 36px;
+}
+.profilecontainer .header button {
+  cursor: pointer;
+  color: white;
+  padding: 2% 10%;
+  background-color: rgb(46, 43, 226);
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 550;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 5rem;
+  padding: 10px 5%;
+  margin: 0;
+}
+.profilecontainer .OrderContainer {
+  width: 100%;
+  height: 60vh;
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+.profilecontainer .OrderContainer span {
+  width: 100%;
+  font-size: 24px;
+  padding: 0px 10px;
+  border-bottom: 1px #cacaca solid;
+}
+.profilecontainer .OrderContainer div {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  font-size: 1.8rem;
+}
+
+.Lcontainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  height: 33rem;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px #cacaca solid;
+}
+.Lcontainer .imgConatiner {
+  width: 25rem;
+  height: 100%;
+}
+.Lcontainer .imgConatiner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Lcontainer .ppdetailcontainer {
+  padding: 2rem;
+  width: 50rem;
+  height: 100%;
+}
+.Lcontainer .ppdetailcontainer h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+.Lcontainer .ppdetailcontainer p {
+  line-height: 3rem;
+  font-size: 1.4rem;
+}
+.Lcontainer .detailcontainer {
+  width: 36rem;
+  padding: 2rem;
+  line-height: 2.5rem;
+}
+.Lcontainer h2 {
+  font-size: 2.4rem;
+}
+.Lcontainer h2:hover {
+  color: rgb(30, 116, 255);
+}
+.Lcontainer span {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: #525252;
+}
+.Lcontainer h4 {
+  color: rgb(30, 116, 255);
+  font-size: 1.2rem;
+}
+.Lcontainer h5 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 450;
+}
+
+.cardLayout {
+  width: 20rem;
+  height: 25rem;
+  padding: 1rem;
+  background-color: #63A6D7;
+  margin: 0 0.5rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+.cardLayout div {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+}
+.cardLayout div h5 {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  letter-spacing: 0.7px;
+  color: #FBFAFB;
+}
+.cardLayout div span {
+  font-size: 1rem;
+  font-weight: 550;
+  color: #FBFAFB;
+}
+
+.imageconatiner {
+  width: 100%;
+  height: 15rem;
+}
+.imageconatiner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.detailcontainer {
+  display: flex;
+  flex-direction: column;
+  height: 33%;
+  justify-content: space-between;
+}
+.detailcontainer h5 {
+  min-height: 22px;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: 22px;
+  overflow: hidden;
+}
+.detailcontainer p {
+  font-size: 10px;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 25px;
+  max-height: 25px;
+  color: #dcdcdc;
+  line-height: 10px;
+  margin-top: 5px;
+}
+.detailcontainer button {
+  color: #FBFAFB;
+  width: -moz-max-content;
+  width: max-content;
+  border: 0;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: #212CAE;
+}
+.detailcontainer div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.detailcontainer div span {
+  font-size: large;
+}
+
+.searchContainer {
+  position: absolute;
+  z-index: 100;
+  width: 30%;
+  height: -moz-max-content;
+  height: max-content;
+  top: 6.1rem;
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-shadow: 1px 7px 10px 1px rgba(0, 0, 0, 0.203);
+}
+.searchContainer .serachBody {
+  width: 100%;
+  max-height: 40vh;
+  height: -moz-max-content;
+  height: max-content;
+}
+.searchContainer .searchCard {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.searchContainer .searchCard img {
+  width: 5.5rem;
+  height: 5.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  aspect-ratio: 3/2;
+}
+.searchContainer .searchCard div {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.searchContainer .searchCard div span {
+  color: #212CAE;
+  font-size: 1.2rem;
+}
+.searchContainer .searchCard div h4 {
+  font-size: 1.2rem;
+}
+.searchContainer .searchCard:hover {
+  background-color: #c0c0c0;
+}
+.searchContainer .icon {
+  font-size: 18px;
+  content: "\f08e";
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,12 @@
+.catagorycontainer {
+  font-size: 1.6rem;
+  background-color: $grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 6rem;
+
+  span {
+    color: white;
+  }
+}
