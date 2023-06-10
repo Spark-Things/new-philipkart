@@ -137,13 +137,4 @@ router.post("/payment",requireLogin,(req,res) => {
   })
 })
 
-
-if(process.env.NODE_ENV == 'production'){
-  const path = require('path');
-   router.get('/',(res,req) => {
-    router.use(express.static(path.resolve(__dirname,'client','build')));
-    res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
-   })
-}
-
 module.exports = router;
