@@ -42,7 +42,7 @@ app.listen(port, () => {
 if(process.env.NODE_ENV == 'production'){
   const path = require('path');
    app.get('/',(res,req) => {
-    app.use(express.static(path.resolve(__dirname,'client','build')));
-    res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
+    app.use(express.static(path.resolve(__dirname,'Frontend','dist')));
+    res.sendFile(path.resolve(__dirname,'Frontend','dist','index.html'))
    })
 }
