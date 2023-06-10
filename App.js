@@ -39,6 +39,8 @@ app.listen(port, () => {
   console.log("Yehhh Connected To Server");
 });
 
+console.log(MONGOURI);
+
 if(process.env.NODE_ENV=="production"){
   app.use(express.static('Frontend/dist'))
   const path=require('path')
