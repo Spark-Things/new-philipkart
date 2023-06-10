@@ -1,0 +1,75 @@
+@import "./variable";
+.cardLayout{
+  width: 20rem;
+  height: 25rem;
+  padding: 1rem;
+  background-color: $light_blue;
+  margin: 0 .5rem;
+  font-size: 1.6rem;
+  border-radius: .5rem;
+   div{
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+    h5{
+      text-transform: capitalize;
+      font-size: 1.6rem;
+      letter-spacing: .7px;
+      color: $white;
+    }
+    span{
+      font-size: 1rem;
+      font-weight: 550;
+      color: $white;
+    }
+   }
+}
+.imageconatiner{
+  width: 100%;
+  height: 15rem;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.detailcontainer{
+  display: flex;
+  flex-direction: column;
+  height: 33%;
+  justify-content: space-between;
+  h5{
+    min-height: 22px;
+    height: max-content;
+    max-height: 22px;
+    overflow:hidden;
+  }
+  p{
+    font-size: 10px;
+    height: max-content;
+    min-height: 25px;
+    max-height: 25px;
+    color: $Textgrey;
+    line-height: 10px;
+    margin-top: 5px;
+  }
+  button{
+    color: $white;
+    width: max-content;
+    border: 0;
+    padding: 5px 15px;
+    border-radius: 5px; 
+    background-color: $main_color;
+  }
+  div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    span{
+      font-size: large;
+    }
+  }
+}

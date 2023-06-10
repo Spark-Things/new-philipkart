@@ -1,0 +1,22 @@
+.Adcontainer {
+  @include row();
+  height: 40vh;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  // button{
+  //   padding: 5rem 1.5rem;
+  //   align-self: center;
+  //   margin: auto;
+  //   color: black;
+  //   background-color: white;
+  //   border: 0px;
+  //   border-radius: 5px;
+
+  //   &:hover{
+  //     background-color: #525252;
+  //   }
+  // }
+}

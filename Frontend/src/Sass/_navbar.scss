@@ -1,0 +1,57 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  background-color: $main_color;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+
+  .logo {
+    font-family: "Syncopate", sans-serif;
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .rn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    span {
+      font-size: 18px;
+      color: rgb(255, 255, 255);
+      padding: 0.5rem 2rem;
+      &:hover {
+        background-color: #8e8e8e78;
+        border-radius: 5px;
+      }
+    }
+  }
+  .SeachbarContainer {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+
+  }
+  .Seachbar {
+    width: 100%;
+    background-color: #cacacaa4;
+    font-size: 16px;
+    color: $black;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #cacaca;
+    margin-right: 2rem;
+    &::placeholder {
+      color: white;
+    }
+    &:focus {
+      &::placeholder {
+        color: $black;
+      }
+      outline: 0;
+      background-color: #cacaca;
+    }
+  }
+}
