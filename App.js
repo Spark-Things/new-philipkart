@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require("mongoose");
 
-const  {MONGOURI}  = require('./config/Keys');
+const  { MONGOURI }  = require('./config/Keys');
 
 const port = 5000;
 
@@ -34,11 +34,6 @@ app.use(require('./Routers/post'))
 // app.get("/", (req, res) => {
 //   res.send("hello world");
 // });
-
-app.listen(port, () => {
-  console.log("Yehhh Connected To Server");
-});
-
 if(process.env.NODE_ENV == "production"){
   app.use(express.static('Frontend/dist'))
   const path=require('path')
@@ -48,3 +43,8 @@ if(process.env.NODE_ENV == "production"){
 
   })
 }
+
+app.listen(port, () => {
+  console.log("Yehhh Connected To Server");
+});
+
