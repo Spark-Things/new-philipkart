@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Panelcontainer({ category }) {
   const [Data, setData] = useState();
   useEffect(() => {
-    fetch(`process.env.backendURLproduct/${category}`, {
+    fetch(`process.env.backendURL/product/${category}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",

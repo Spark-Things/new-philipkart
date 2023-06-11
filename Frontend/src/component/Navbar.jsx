@@ -9,7 +9,7 @@ function Navbar() {
 
    const fetchSearch = (query) => {
     setsearch(query)
-    fetch('process.env.backendURLsearch-result',{
+    fetch('process.env.backendURL/search-result',{
       method:"post",
       headers:{
         "Content-Type":"application/json"

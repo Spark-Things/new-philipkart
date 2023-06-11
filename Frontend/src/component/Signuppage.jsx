@@ -17,7 +17,7 @@ function Signuppage() {
      const email = document.getElementById("email").value;
      const cnfpassword = document.getElementById("cnfpassword").value;
 
-    fetch("process.env.backendURLsignup",{
+    fetch("process.env.backendURL/signup",{
       method:"POST",
       headers:{
         "Content-type":"application/json"

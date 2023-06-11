@@ -8,7 +8,7 @@ function Signinpage() {
   const navigate = useNavigate();
 
   const login = () => {
-    fetch("process.env.backendURLsignin", {
+    fetch("process.env.backendURL/signin", {
       method: "POST",
       body: JSON.stringify({
         email,

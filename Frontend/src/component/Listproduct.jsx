@@ -6,7 +6,7 @@ function Listproduct() {
   const { category } = useParams();
   // console.log(category);
   useEffect(() => {
-    fetch(`process.env.backendURLproduct/${category}`, {
+    fetch(`process.env.backendURL/product/${category}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",

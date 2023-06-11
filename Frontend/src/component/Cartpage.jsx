@@ -10,7 +10,7 @@ function Cartpage() {
   var TotalAmount = 0;
 
   useEffect(() => {
-    fetch("process.env.backendURLgetcartItems", {
+    fetch("process.env.backendURL/getcartItems", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ function Cartpage() {
   }, []);
 
   const removeFromcart = (id) => {
-    fetch(`process.env.backendURLdeleteItem/${id}`, {
+    fetch(`process.env.backendURL/deleteItem/${id}`, {
       method: "delete",
       headers: {
         "Content-Type": "application/json ",
@@ -39,7 +39,7 @@ function Cartpage() {
 
   const handleCheckout = (paymentInfo) => {
     console.log(paymentInfo);
-    fetch("process.env.backendURLpayment", {
+    fetch("process.env.backendURL/payment", {
       method: "POST",
       headers: {
         authorization: "Bearer " + localStorage.getItem("jwt"),

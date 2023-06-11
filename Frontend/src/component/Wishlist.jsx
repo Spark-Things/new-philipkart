@@ -6,7 +6,7 @@ function Wishlist() {
   var TotalAmount = 0;
 
   useEffect(() => {
-    fetch("process.env.backendURLgetWishlist", {
+    fetch("process.env.backendURL/getWishlist", {
       method: "get",
       headers: {
         "Content-type": "application/json",
@@ -22,7 +22,7 @@ function Wishlist() {
   }, []);
 
   const removeFromWishlist = (id) => {
-    fetch(`process.env.backendURLdeleteItemfromWishlist/${id}`,{
+    fetch(`process.env.backendURL/deleteItemfromWishlist/${id}`,{
       method:"delete",
       headers: {
         "Content-Type": "application/json ",
