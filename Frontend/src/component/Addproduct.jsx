@@ -16,7 +16,7 @@ function Addproduct() {
   const addProductToDb = () => {
     console.log(ImgUrl);
     console.log(category);
-    ImgUrl ? fetch("process.env.backendURL/addproduct", {
+    ImgUrl ? fetch("https://philipkart.onrender.com/addproduct", {
       method: "POST",
       headers: {
         authorization: "Bearer " + localStorage.getItem("jwt"),

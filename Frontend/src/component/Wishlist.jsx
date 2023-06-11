@@ -6,7 +6,7 @@ function Wishlist() {
   var TotalAmount = 0;
 
   useEffect(() => {
-    fetch("process.env.backendURL/getWishlist", {
+    fetch("https://philipkart.onrender.com/getWishlist", {
       method: "get",
       headers: {
         "Content-type": "application/json",
@@ -22,7 +22,7 @@ function Wishlist() {
   }, []);
 
   const removeFromWishlist = (id) => {
-    fetch(`process.env.backendURL/deleteItemfromWishlist/${id}`,{
+    fetch(`https://philipkart.onrender.com/deleteItemfromWishlist/${id}`,{
       method:"delete",
       headers: {
         "Content-Type": "application/json ",

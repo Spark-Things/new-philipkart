@@ -19,7 +19,7 @@ function Productdetail() {
   }
 
   useEffect(() => {
-    fetch(`process.env.backendURL/products/${id}`, {
+    fetch(`https://philipkart.onrender.com/products/${id}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function Productdetail() {
 
   const addtoCart = (id) => {
     // console.log(id);
-    fetch(`process.env.backendURL/addtocart/${id}`, {
+    fetch(`https://philipkart.onrender.com/addtocart/${id}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -50,7 +50,7 @@ function Productdetail() {
   };
 
   const addtoWishlist = (id) => {
-    fetch(`process.env.backendURL/addtowishlist/${id}`, {
+    fetch(`https://philipkart.onrender.com/addtowishlist/${id}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

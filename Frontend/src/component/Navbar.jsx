@@ -9,7 +9,7 @@ function Navbar() {
 
    const fetchSearch = (query) => {
     setsearch(query)
-    fetch('process.env.backendURL/search-result',{
+    fetch('https://philipkart.onrender.com/search-result',{
       method:"post",
       headers:{
         "Content-Type":"application/json"

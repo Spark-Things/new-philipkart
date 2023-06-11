@@ -5,7 +5,7 @@ function Profile() {
   const [User, setUser] = useState();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("process.env.backendURL/myprofile", {
+    fetch("https://philipkart.onrender.com/myprofile", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
